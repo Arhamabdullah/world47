@@ -1,6 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/": "pages/index.js"
-}
+{"/_app":"pages/_app.js","/_error":"pages/_error.js","/ArtworkPage":"pages/ArtworkPage.html","/CommunityPage":"pages/CommunityPage.html","/HelpPage":"pages/HelpPage.html","/RewardsPage":"pages/RewardsPage.html","/StorePage":"pages/StorePage.html","/":"pages/index.html","/loginpage":"pages/loginpage.html","/signuppage":"pages/signuppage.html","/world47":"pages/world47.html","/_document":"pages/_document.js","/404":"pages/404.html"}
