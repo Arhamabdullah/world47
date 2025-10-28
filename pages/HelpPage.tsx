@@ -3,6 +3,9 @@ import React, { useState, useCallback, useRef, useEffect, useMemo } from "react"
 import { motion } from "framer-motion";
 import { MessageSquare, HelpCircle, Mail, Users, Send, Loader2, Link, ChevronDown } from "lucide-react";
 
+// 1. IMPORT THE HEADER COMPONENT
+import Header from "../components/Header"; 
+
 /* ------------------------------
     Constants & Configuration
     ------------------------------ */
@@ -424,6 +427,9 @@ const ContactSection: React.FC = () => {
     ------------------------------ */
 
 const App: React.FC = () => {
+    // We define the page title here to pass it to the Header component
+    const pageTitle = "SUPPORT NEXUS V4.7";
+
     const simpleFade = {
         initial: { opacity: 0 },
         animate: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } },
@@ -437,15 +443,18 @@ const App: React.FC = () => {
             {/* Simulated Grid Overlay for Sci-Fi look */}
             <div className="absolute inset-0 bg-repeat opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(cyan 1px, transparent 1px), radial-gradient(cyan 1px, transparent 1px)', backgroundSize: '40px 40px', backgroundPosition: '0 0, 20px 20px' }}></div>
 
-            {/* Header/Navigation - Consistent Header */}
-            <motion.header className="absolute top-6 left-6 right-6 z-50 pointer-events-none" {...simpleFade} transition={{ ...simpleFade.animate.transition, delay: 0.1 }}>
-                <div className="text-xl font-bold tracking-tight drop-shadow-lg text-white/90 pointer-events-auto">SUPPORT NEXUS V4.7</div>
-                <div className="text-xs opacity-60 mt-1">24/7 Assistance for World47 Citizens</div>
+            {/* 2. REPLACED THE OLD HEADER BLOCK WITH THE NEW HEADER COMPONENT */}
+            <motion.header 
+                className="absolute top-6 left-6 right-6 z-50 pointer-events-auto" // Restores positioning
+                {...simpleFade} 
+                transition={{ ...simpleFade.animate.transition, delay: 0.1 }}
+            >
+                <Header pageTitle={pageTitle} /> 
             </motion.header>
 
-            {/* Main Content Area: Two columns */}
+            {/* Main Content Area: Increased margin-top (mt-28) to push content below the new header. */}
             <motion.div
-                className="relative z-40 w-full max-w-7xl h-[85vh] p-8 mt-12 grid grid-cols-1 md:grid-cols-3 gap-8"
+                className="relative z-40 w-full max-w-7xl h-[85vh] p-8 mt-28 grid grid-cols-1 md:grid-cols-3 gap-8" // ⬅️ CHANGED mt-12 to mt-28
                 initial="hidden"
                 animate="visible"
                 variants={{

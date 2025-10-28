@@ -17,16 +17,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/index.js"
     ],
-    "/ArtworkPage": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/ArtworkPage.js"
-    ],
-    "/CommunityPage": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/CommunityPage.js"
-    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

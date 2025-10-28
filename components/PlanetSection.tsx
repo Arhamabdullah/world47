@@ -13,7 +13,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import * as THREE from "three";
-import Header from "./Header"; // <-- ensure Header.tsx is placed here (adjust path if needed)
+
 
 /* ------------------------------
    LOADER COMPONENT (click-to-start)

@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { DollarSign, User, Send, QrCode, TrendingUp, RefreshCw, ChevronRight, BarChart3, Camera, UploadCloud } from "lucide-react";
-
+import Header from "../components/Header";
 /* ------------------------------
     Types & Interfaces
     ------------------------------ */
@@ -190,13 +190,13 @@ const BalanceCard: React.FC<{ balance: number, user: UserInfo, friends: Friend[]
                         value={transferAmount}
                         onChange={(e) => setTransferAmount(Number(e.target.value))}
                         placeholder="AMOUNT (ABN)"
-                        className="w-full bg-cyan-900/30 p-2 text-cyan-200 border border-cyan-500/50 focus:border-cyan-400 font-mono text-sm"
+                        className="w-full bg-cyan-900/30 p-2 text-cyan-200 border border-cyan-500/50 focus:border-cyan-400 font-mono text-sm rounded-md"
                     />
 
                     <select
                         value={targetFriendId}
                         onChange={(e) => setTargetFriendId(e.target.value)}
-                        className="w-full bg-cyan-900/30 p-2 text-cyan-200 border border-cyan-500/50 focus:border-cyan-400 font-mono text-sm appearance-none"
+                        className="w-full bg-cyan-900/30 p-2 text-cyan-200 border border-cyan-500/50 focus:border-cyan-400 font-mono text-sm appearance-none rounded-md"
                     >
                         {friends.map(friend => (
                             <option key={friend.id} value={friend.id}>{friend.name} ({friend.id.substring(0, 7)}...)</option>
@@ -378,15 +378,9 @@ const RecentActivityPanel: React.FC<{ transactions: RewardTransaction[] }> = ({ 
     ------------------------------ */
 
 const App: React.FC = () => {
-    const [pageTitle] = useState<string>("ABN REWARDS TERMINAL");
     const [abnBalance, setAbnBalance] = useState<number>(145.75);
     const [transactions, setTransactions] = useState<RewardTransaction[]>(MOCK_TRANSACTIONS);
 
-    const simpleFade = {
-        initial: { opacity: 0 },
-        animate: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } },
-    };
-    
     // Function to handle a successful reward redemption
     const handleRewardRedeem = (amount: number) => {
         const newReward: RewardTransaction = {
@@ -418,30 +412,28 @@ const App: React.FC = () => {
 
 
     return (
-        <section className="relative w-screen h-screen flex items-center justify-center overflow-hidden bg-[#00050a] text-cyan-200">
+        // FIX: Added pt-16 (padding-top) to push content below the fixed header
+        <section className="relative w-screen h-screen flex flex-col items-center justify-start overflow-hidden bg-[#00050a] text-cyan-200 pt-16">
+            
             {/* Background Gradient matching the original style */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#0a599e_0%,_#0a1631_40%,_#211c39_100%)]"></div>
 
             {/* Simulated Grid Overlay for Sci-Fi look */}
             <div className="absolute inset-0 bg-repeat opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(cyan 1px, transparent 1px), radial-gradient(cyan 1px, transparent 1px)', backgroundSize: '40px 40px', backgroundPosition: '0 0, 20px 20px' }}></div>
 
-            {/* Header/Navigation - Retaining the consistent header style */}
-            <motion.header className="absolute top-6 left-6 right-6 flex items-center justify-between z-50 pointer-events-none" {...simpleFade} transition={{ ...simpleFade.animate.transition, delay: 0.1 }}>
-                <div className="flex items-center gap-4 pointer-events-auto">
-                    <motion.button whileTap={{ scale: 0.95 }} className="glass-panel px-3 py-2 rounded-lg text-sm flex items-center gap-2 text-cyan-300 hover:bg-cyan-500/20 transition-colors">
-                        <RefreshCw size={16} /> REFRESH DATA
-                    </motion.button>
-                    <div className="text-xl font-bold tracking-tight drop-shadow-lg text-white/90">{pageTitle}</div>
-                </div>
-                <div className="text-xs opacity-60">CRYPTO LEDGER: Live & Secure</div>
-            </motion.header>
+            {/* Header Component (Now fixed at the top) */}
+            <Header />
 
-            {/* Main Content Area - Decreased height to 68vh for a more compact look */}
+            {/* Main Content Area - Centered horizontally, occupies remaining vertical space */}
             <motion.div
-                className="relative z-40 w-full max-w-6xl h-[68vh] p-8 mt-12 grid grid-cols-1 md:grid-cols-3 gap-8"
+                // Removed mt-12 (margin-top) as pt-16 on the section handles the spacing
+                // Used mx-auto to center the content block horizontally
+                className="relative z-40 w-full max-w-6xl p-8 mx-auto flex-grow grid grid-cols-1 md:grid-cols-3 gap-8"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
+                // Max height ensures it fits nicely within the remaining space
+                style={{ maxHeight: 'calc(100vh - 4rem)'}}
             >
                 {/* Column 1: User Info, Balance, and Transfer */}
                 <div className="col-span-1">

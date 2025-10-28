@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Users, Hash, Mail, Zap, X, ArrowLeft, TrendingUp, LucideIcon, MessageSquare, Clock } from "lucide-react";
 
+// 1. CORRECT IMPORT PATH for the Header
+import Header from "../components/Header";
+
 /* ------------------------------
     Types & Interfaces
     ------------------------------ */
@@ -172,7 +175,7 @@ const getChannelName = (id: number): string => {
 const ThreadListPanel: React.FC = () => {
     return (
         // 🎯 FIX: Simplified the height constraint to rely fully on the parent's flex-grow
-        <StaggeredBox className="p-4 w-full **h-full** flex flex-col">
+        <StaggeredBox className="p-4 w-full h-full flex flex-col">
             <div className="flex justify-between items-center border-b border-cyan-500/30 pb-2 mb-3 flex-shrink-0">
                 <h3 className="text-sm font-semibold tracking-wider text-cyan-400 flex items-center gap-2">
                     <MessageSquare size={16} /> RECENT ACTIVITY THREADS ({MOCK_THREADS.length})
@@ -261,27 +264,28 @@ const App: React.FC = () => {
             {/* Simulated Grid Overlay for Sci-Fi look */}
             <div className="absolute inset-0 bg-repeat opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(cyan 1px, transparent 1px), radial-gradient(cyan 1px, transparent 1px)', backgroundSize: '40px 40px', backgroundPosition: '0 0, 20px 20px' }}></div>
 
-            {/* Header/Navigation */}
-            <motion.header className="absolute top-6 left-6 right-6 flex items-center justify-between z-50 pointer-events-none" {...simpleFade} transition={{ ...simpleFade.animate.transition, delay: 0.1 }}>
-                <div className="flex items-center gap-4 pointer-events-auto">
-                    <motion.button whileTap={{ scale: 0.95 }} className="glass-panel px-3 py-2 rounded-lg text-sm flex items-center gap-2 text-cyan-300 hover:bg-cyan-500/20 transition-colors">
-                        <ArrowLeft size={16} /> BACK TO WORLD 47
-                    </motion.button>
-                    <div className="text-xl font-bold tracking-tight drop-shadow-lg text-white/90">{pageTitle}</div>
-                </div>
-                <div className="text-xs opacity-60">PROTOCOL: Active & Encrypted</div>
+            {/* 2. HEADER COMPONENT PLACEMENT - Re-wrapped with original positioning */}
+            <motion.header 
+                className="absolute top-6 left-6 right-6 z-50 pointer-events-auto" // Restored positioning
+                {...simpleFade} 
+                transition={{ ...simpleFade.animate.transition, delay: 0.1 }}
+            >
+                {/* Pass the pageTitle prop if your Header component uses it */}
+                <Header pageTitle={pageTitle} /> 
             </motion.header>
+            
+            {/* OLD HEADER BLOCK REMOVED */}
 
-            {/* Main Content Area: h-[85vh] sets the overall height */}
+            {/* Main Content Area: Increased margin-top (mt-28) to push content below the header. */}
             <motion.div
-                className="relative z-40 w-full max-w-7xl h-[85vh] p-8 mt-12 grid grid-cols-1 md:grid-cols-4 gap-8"
+                className="relative z-40 w-full max-w-7xl h-[85vh] p-8 mt-28 grid grid-cols-1 md:grid-cols-4 gap-8" // ⬅️ CHANGED mt-12 to mt-28
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
             >
                 {/* Channels & Threads (Main Content - Col Span 3) */}
                 {/* h-full ensures this flex-col container fills the parent's height */}
-                <div className="col-span-1 md:col-span-3 flex flex-col space-y-6 overflow-hidden **h-full**">
+                <div className="col-span-1 md:col-span-3 flex flex-col space-y-6 overflow-hidden h-full">
                     {/* Channels Section - Fixed height area */}
                     <div className="flex-shrink-0">
                         <h2 className="text-2xl font-mono tracking-wider mb-4 text-[#66fff0] border-b border-cyan-500/50 pb-2">
@@ -295,7 +299,7 @@ const App: React.FC = () => {
                     </div>
 
                     {/* Threads Section - Takes remaining vertical space and is scrollable */}
-                    <div className="flex-grow"> {/* 🎯 FIX: Removed min-h-[350px] here */}
+                    <div className="flex-grow">
                         <ThreadListPanel />
                     </div>
                 </div>
