@@ -15,7 +15,7 @@ import {
   YAxis,
   ResponsiveContainer,
 } from "recharts";
-<<<<<<< HEAD
+ HEAD
 import * as THREE from "three";
 
 // --- GLOBAL TYPE DEFINITIONS ---
@@ -67,9 +67,9 @@ const containerVariants: Variants = {
     transition: { staggerChildren: 0.15, delayChildren: 0.5 },
   },
 };
-=======
+
 import * as THREE from "three"; // <-- ensure Header.tsx is placed here (adjust path if needed)
->>>>>>> 97653aa3d3ac8c7999e2f042803bdce52ecb7bf5
+
 
 /* ------------------------------
     LOADER COMPONENT (click-to-start)
