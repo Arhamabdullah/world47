@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { MessageSquare, HelpCircle, Mail, Users, Send, Loader2, Link, ChevronDown } from "lucide-react";
 
 // 1. IMPORT THE HEADER COMPONENT
-import Header from "../components/Header"; 
+import Header from "/components/Header"; 
 
 /* ------------------------------
     Constants & Configuration

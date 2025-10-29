@@ -2,7 +2,7 @@
 
 import React from 'react';
 // 💡 We import the full, multi-step application component
-import SignupApp from '../components/SignupApp'; 
+import SignupApp from '/components/SignupApp'; 
 
 /**
  * The page component for the /signuppage route.

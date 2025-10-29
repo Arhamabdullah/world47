@@ -1,0 +1,22 @@
+(globalThis.TURBOPACK_CHUNK_LISTS || (globalThis.TURBOPACK_CHUNK_LISTS = [])).push({
+    script: typeof document === "object" ? document.currentScript : undefined,
+    chunks: [
+  "static/chunks/[root-of-the-server]__94f94aa2._.js",
+  "static/chunks/node_modules_next_dist_compiled_3202fd1d._.js",
+  "static/chunks/node_modules_next_dist_shared_lib_4025f6b7._.js",
+  "static/chunks/node_modules_next_dist_client_3ede7da4._.js",
+  "static/chunks/node_modules_next_dist_6024eba3._.js",
+  "static/chunks/node_modules_next_link_207af988.js",
+  "static/chunks/node_modules_react_e3593a73._.js",
+  "static/chunks/node_modules_react-dom_cjs_react-dom_development_2b5e0eb3.js",
+  "static/chunks/node_modules_react-dom_8a8085df._.js",
+  "static/chunks/node_modules_motion-dom_dist_es_01ad550f._.js",
+  "static/chunks/node_modules_framer-motion_dist_es_fab66f54._.js",
+  "static/chunks/node_modules_three_build_three_module_9e618f6d.js",
+  "static/chunks/node_modules_react-reconciler_eb89a692._.js",
+  "static/chunks/node_modules_@react-three_fiber_dist_f26a1a2a._.js",
+  "static/chunks/node_modules_recharts_es6_3d8f9874._.js",
+  "static/chunks/node_modules_d9e9e0c3._.js"
+],
+    source: "entry"
+});

@@ -255,7 +255,7 @@
 "use client";
 
 import React from "react";
-import Header from "../components/Header";        // ✅ make sure file name is Header.tsx
+import Header from "../components/header";        // ✅ make sure file name is Header.tsx
 import PlanetSection from "../components/PlanetSection";
 
 export default function HomePage() {

@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
 
 "use client";
 import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
-import { Canvas, useFrame, ThreeProps } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { motion, Variants, easeInOut } from "framer-motion";
+
 import {
   BarChart,
   Bar,
@@ -15,7 +14,6 @@ import {
   YAxis,
   ResponsiveContainer,
 } from "recharts";
- HEAD
 import * as THREE from "three";
 
 // --- GLOBAL TYPE DEFINITIONS ---

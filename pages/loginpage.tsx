@@ -2,7 +2,7 @@
 
 import React from 'react';
 // 💡 The correct relative path is '../components/login'
-import LoginPageComponent from '../components/login'; 
+import LoginPageComponent from '/components/login'; 
 
 /**
  * The page component for the /loginpage route.
