@@ -777,7 +777,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
-"[project]/pages/CommunityPage.tsx [client] (ecmascript)", ((__turbopack_context__) => {
+"[project]/pages/RewardsPage.tsx [client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 /* eslint-disable @typescript-eslint/ban-ts-comment */ // @ts-nocheck
@@ -788,18 +788,18 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/index.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/dom/motion.mjs [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/users.js [client] (ecmascript) <export default as Users>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$hash$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Hash$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/hash.js [client] (ecmascript) <export default as Hash>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/mail.js [client] (ecmascript) <export default as Mail>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$zap$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Zap$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/zap.js [client] (ecmascript) <export default as Zap>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [client] (ecmascript) <export default as X>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$dollar$2d$sign$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__DollarSign$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/dollar-sign.js [client] (ecmascript) <export default as DollarSign>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/user.js [client] (ecmascript) <export default as User>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/send.js [client] (ecmascript) <export default as Send>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$qr$2d$code$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__QrCode$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/qr-code.js [client] (ecmascript) <export default as QrCode>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/trending-up.js [client] (ecmascript) <export default as TrendingUp>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$square$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageSquare$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/message-square.js [client] (ecmascript) <export default as MessageSquare>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clock.js [client] (ecmascript) <export default as Clock>");
-// 1. CORRECT IMPORT PATH for the Header
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-right.js [client] (ecmascript) <export default as ChevronRight>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$column$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BarChart3$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chart-column.js [client] (ecmascript) <export default as BarChart3>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$camera$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Camera$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/camera.js [client] (ecmascript) <export default as Camera>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cloud$2d$upload$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__UploadCloud$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/cloud-upload.js [client] (ecmascript) <export default as UploadCloud>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/header.tsx [client] (ecmascript)");
 ;
-var _s = __turbopack_context__.k.signature();
+var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature(), _s2 = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
@@ -859,315 +859,539 @@ const containerVariants = {
             variants: contentVariants,
             children: children
         }, void 0, false, {
-            fileName: "[project]/pages/CommunityPage.tsx",
-            lineNumber: 83,
+            fileName: "[project]/pages/RewardsPage.tsx",
+            lineNumber: 73,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
-        fileName: "[project]/pages/CommunityPage.tsx",
-        lineNumber: 82,
+        fileName: "[project]/pages/RewardsPage.tsx",
+        lineNumber: 72,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
 _c = StaggeredBox;
 /* ------------------------------
     DATA MOCKUP
-    ------------------------------ */ const MOCK_CHANNELS = [
-    {
-        id: 1,
-        name: "WORLD-47-LOBBY",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$hash$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Hash$3e$__["Hash"],
-        members: 1245,
-        status: "Active"
-    },
-    {
-        id: 2,
-        name: "PROJECT-SYNAPSE-DEV",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$zap$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Zap$3e$__["Zap"],
-        members: 58,
-        status: "Critical"
-    },
-    {
-        id: 3,
-        name: "TRADE-NET-ALPHA",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__["TrendingUp"],
-        members: 890,
-        status: "High"
-    },
-    {
-        id: 4,
-        name: "ART-LAB-COMM",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__["Mail"],
-        members: 420,
-        status: "Active"
-    },
-    {
-        id: 5,
-        name: "SECURITY-FEED-BETA",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"],
-        members: 12,
-        status: "Silent"
-    }
-];
-const BASE_THREADS = [
-    {
-        id: 101,
-        title: "Urgent: Synapse Deployment Error 404 - Need Fix by EOD",
-        channelId: 2,
-        replies: 15,
-        lastActivity: "5 minutes ago"
-    },
-    {
-        id: 102,
-        title: "Brainstorming new features for World-47 interface v2.0",
-        channelId: 1,
-        replies: 210,
-        lastActivity: "1 hour ago"
-    },
-    {
-        id: 103,
-        title: "Market Volatility Discussion: Alpha Trade Net - Q4 Projections",
-        channelId: 3,
-        replies: 55,
-        lastActivity: "3 hours ago"
-    },
-    {
-        id: 104,
-        title: "Best AI Art Prompts of the Week - Share your latest work!",
-        channelId: 4,
-        replies: 32,
-        lastActivity: "1 day ago"
-    },
-    {
-        id: 105,
-        title: "Review of the new Security Protocol v3.1 access logs",
-        channelId: 5,
-        replies: 8,
-        lastActivity: "2 days ago"
-    },
-    {
-        id: 106,
-        title: "Welcome new members - quick guide and FAQs",
-        channelId: 1,
-        replies: 12,
-        lastActivity: "1 week ago"
-    },
-    {
-        id: 107,
-        title: "Optimizing the Zap module: performance tuning feedback",
-        channelId: 2,
-        replies: 7,
-        lastActivity: "1 week ago"
-    }
-];
-// Function to generate a long list of threads to force scrolling
-const generateLongMockThreads = (count)=>{
-    const longList = [];
-    for(let i = 1; i <= count; i++){
-        const base = BASE_THREADS[(i - 1) % BASE_THREADS.length];
-        longList.push({
-            id: i + 1000,
-            title: `[ACTIVITY #${i}] ${base.title}`,
-            channelId: base.channelId,
-            replies: base.replies + Math.floor(i / 5),
-            lastActivity: `${Math.floor(i / 3) + 1} minutes ago`
-        });
-    }
-    return longList;
+    ------------------------------ */ const MOCK_USER = {
+    id: "ABNT01-34x-SYN",
+    name: "CYBER_NOMAD",
+    level: 7,
+    status: "VIP Tier III"
 };
-// Use the function to create a long list for guaranteed scrolling
-const MOCK_THREADS = generateLongMockThreads(50);
-const MOCK_USERS = [
+const MOCK_FRIENDS = [
+    {
+        id: "A01-47-BETA",
+        name: "AURORA_23"
+    },
+    {
+        id: "C99-01-GAM",
+        name: "QUANTUM_LEAP"
+    },
+    {
+        id: "D12-33-DEL",
+        name: "DATA_JOCKEY"
+    }
+];
+const MOCK_TRANSACTIONS = [
     {
         id: 1,
-        name: "ABNT01",
-        status: "ONLINE",
-        color: "text-green-400"
+        source: "E-book: Code Nexus",
+        amount: 15.50,
+        date: "2025-10-24 14:30"
     },
     {
         id: 2,
-        name: "CYBERPIRATE_77",
-        status: "IDLE",
-        color: "text-yellow-400"
+        source: "QR Code Scan (Alpha Key)",
+        amount: 5.00,
+        date: "2025-10-24 10:15"
     },
     {
         id: 3,
-        name: "AURORA_23",
-        status: "AWAY",
-        color: "text-gray-400"
+        source: "E-book: AI Frontier",
+        amount: 22.80,
+        date: "2025-10-23 18:00"
     },
     {
         id: 4,
-        name: "QUANTUM_LEAP",
-        status: "ONLINE",
-        color: "text-green-400"
-    },
-    {
-        id: 5,
-        name: "NEON_WRAITH",
-        status: "STREAMING",
-        color: "text-purple-400"
-    },
-    {
-        id: 6,
-        name: "DATA_JOCKEY",
-        status: "ONLINE",
-        color: "text-green-400"
+        source: "Daily Login Streak (3 days)",
+        amount: 1.50,
+        date: "2025-10-23 09:00"
     }
 ];
 /* ------------------------------
     INNER PAGE COMPONENTS
-    ------------------------------ */ const ChannelCard = ({ channel })=>{
-    const Icon = channel.icon;
-    const isCritical = channel.status === "Critical";
-    const statusColor = isCritical ? "text-red-400" : "text-cyan-400";
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
-        className: `glass-panel p-4 cursor-pointer hover:bg-cyan-900/40 transition-all duration-200 border-2 ${isCritical ? 'border-red-500/70' : 'border-cyan-500/70'}`,
-        variants: panelVariants,
-        whileHover: {
-            scale: 1.05,
-            boxShadow: `0 0 20px ${isCritical ? 'rgba(255, 0, 0, 0.4)' : 'rgba(0, 255, 255, 0.4)'}`
-        },
-        whileTap: {
-            scale: 0.98
-        },
+    ------------------------------ */ const BalanceCard = ({ balance, user, friends, onTransfer })=>{
+    _s();
+    const [isTransferring, setIsTransferring] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [transferAmount, setTransferAmount] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const [targetFriendId, setTargetFriendId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(friends[0].id);
+    const [transferStatus, setTransferStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])("IDLE");
+    const handleTransfer = (e)=>{
+        e.preventDefault();
+        const amount = Number(transferAmount);
+        if (amount > 0 && amount <= balance) {
+            onTransfer(amount, targetFriendId);
+            setTransferStatus("SUCCESS");
+            setTimeout(()=>{
+                setIsTransferring(false);
+                setTransferAmount('');
+                setTransferStatus("IDLE");
+            }, 1500);
+        } else {
+            setTransferStatus("ERROR");
+            setTimeout(()=>setTransferStatus("IDLE"), 2000);
+        }
+    };
+    const transferMessage = transferStatus === "SUCCESS" ? `TRANSFER SUCCESSFUL: ${transferAmount} ABN sent to ${friends.find((f)=>f.id === targetFriendId)?.name}.` : transferStatus === "ERROR" ? "TRANSFER DENIED: Insufficient funds or invalid amount." : "Initiate ABN transfer to a community member.";
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StaggeredBox, {
+        className: "p-6 h-full flex flex-col",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex items-start justify-between",
+                className: "flex items-center gap-4 border-b border-cyan-500/30 pb-3 mb-4",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
-                        size: 28,
-                        className: `mb-2 ${statusColor}`
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__["User"], {
+                        size: 36,
+                        className: "text-[#66fff0]"
                     }, void 0, false, {
-                        fileName: "[project]/pages/CommunityPage.tsx",
-                        lineNumber: 160,
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 141,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: `text-[10px] font-mono tracking-wider ${statusColor}`,
-                        children: channel.status
-                    }, void 0, false, {
-                        fileName: "[project]/pages/CommunityPage.tsx",
-                        lineNumber: 161,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
-                fileName: "[project]/pages/CommunityPage.tsx",
-                lineNumber: 159,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                className: "text-lg font-bold tracking-tight text-[#66fff0] mb-1 truncate",
-                children: channel.name
-            }, void 0, false, {
-                fileName: "[project]/pages/CommunityPage.tsx",
-                lineNumber: 163,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex justify-between text-xs opacity-70",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        children: "Members:"
-                    }, void 0, false, {
-                        fileName: "[project]/pages/CommunityPage.tsx",
-                        lineNumber: 165,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "font-mono",
-                        children: channel.members.toLocaleString()
-                    }, void 0, false, {
-                        fileName: "[project]/pages/CommunityPage.tsx",
-                        lineNumber: 166,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
-                fileName: "[project]/pages/CommunityPage.tsx",
-                lineNumber: 164,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0))
-        ]
-    }, void 0, true, {
-        fileName: "[project]/pages/CommunityPage.tsx",
-        lineNumber: 151,
-        columnNumber: 9
-    }, ("TURBOPACK compile-time value", void 0));
-};
-_c1 = ChannelCard;
-// Helper function to find channel name from ID
-const getChannelName = (id)=>{
-    const channel = MOCK_CHANNELS.find((c)=>c.id === id);
-    return channel ? channel.name.replace('-', ' ') : 'Unknown Channel';
-};
-const ThreadListPanel = ()=>{
-    return(// 🎯 FIX: Simplified the height constraint to rely fully on the parent's flex-grow
-    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StaggeredBox, {
-        className: "p-4 w-full h-full flex flex-col",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex justify-between items-center border-b border-cyan-500/30 pb-2 mb-3 flex-shrink-0",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                        className: "text-sm font-semibold tracking-wider text-cyan-400 flex items-center gap-2",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex flex-col",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$square$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageSquare$3e$__["MessageSquare"], {
-                                size: 16
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                className: "text-xl font-bold tracking-wider text-white/90",
+                                children: user.name
                             }, void 0, false, {
-                                fileName: "[project]/pages/CommunityPage.tsx",
-                                lineNumber: 184,
+                                fileName: "[project]/pages/RewardsPage.tsx",
+                                lineNumber: 143,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
-                            " RECENT ACTIVITY THREADS (",
-                            MOCK_THREADS.length,
-                            ")"
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/pages/CommunityPage.tsx",
-                        lineNumber: 183,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-[10px] font-mono opacity-80 flex items-center gap-2",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-green-300",
-                                children: "PING: 22ms"
-                            }, void 0, false, {
-                                fileName: "[project]/pages/CommunityPage.tsx",
-                                lineNumber: 188,
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-xs font-mono opacity-60",
+                                children: [
+                                    "ID: ",
+                                    user.id
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/pages/RewardsPage.tsx",
+                                lineNumber: 144,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-yellow-300",
-                                children: "NOTICE: Low traffic in ART-LAB-COMM."
-                            }, void 0, false, {
-                                fileName: "[project]/pages/CommunityPage.tsx",
-                                lineNumber: 189,
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-sm text-cyan-400",
+                                children: [
+                                    user.status,
+                                    " | LVL ",
+                                    user.level
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/pages/RewardsPage.tsx",
+                                lineNumber: 145,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
-                        fileName: "[project]/pages/CommunityPage.tsx",
-                        lineNumber: 187,
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 142,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
-                fileName: "[project]/pages/CommunityPage.tsx",
-                lineNumber: 182,
+                fileName: "[project]/pages/RewardsPage.tsx",
+                lineNumber: 140,
+                columnNumber: 13
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex flex-col flex-grow",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex items-center gap-2 mb-2",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$dollar$2d$sign$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__DollarSign$3e$__["DollarSign"], {
+                                size: 20,
+                                className: "text-[#66fff0]"
+                            }, void 0, false, {
+                                fileName: "[project]/pages/RewardsPage.tsx",
+                                lineNumber: 152,
+                                columnNumber: 21
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                className: "text-sm font-mono tracking-wider text-cyan-300",
+                                children: "AVAILABLE FUNDS"
+                            }, void 0, false, {
+                                fileName: "[project]/pages/RewardsPage.tsx",
+                                lineNumber: 153,
+                                columnNumber: 21
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 151,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "text-4xl font-extrabold text-white/95 drop-shadow-lg mb-4",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "text-[#66fff0]",
+                                children: balance.toFixed(2)
+                            }, void 0, false, {
+                                fileName: "[project]/pages/RewardsPage.tsx",
+                                lineNumber: 158,
+                                columnNumber: 21
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "text-lg ml-1 opacity-70",
+                                children: "ABN"
+                            }, void 0, false, {
+                                fileName: "[project]/pages/RewardsPage.tsx",
+                                lineNumber: 159,
+                                columnNumber: 21
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 157,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-xs opacity-60 flex items-center gap-1 mb-4",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__["TrendingUp"], {
+                                size: 12,
+                                className: "text-green-400"
+                            }, void 0, false, {
+                                fileName: "[project]/pages/RewardsPage.tsx",
+                                lineNumber: 162,
+                                columnNumber: 21
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            "+2.1% in last 24h (Simulated Market Data)"
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 161,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].button, {
+                        onClick: ()=>setIsTransferring((prev)=>!prev),
+                        whileTap: {
+                            scale: 0.98
+                        },
+                        className: `w-full py-2.5 font-semibold tracking-wider rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 mt-auto ${isTransferring ? 'bg-red-700/70 hover:bg-red-600' : 'bg-green-700/70 hover:bg-green-600'}`,
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
+                                size: 16
+                            }, void 0, false, {
+                                fileName: "[project]/pages/RewardsPage.tsx",
+                                lineNumber: 172,
+                                columnNumber: 21
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            " ",
+                            isTransferring ? 'CANCEL TRANSFER' : 'TRANSFER ABN CRYPTO'
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 167,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/pages/RewardsPage.tsx",
+                lineNumber: 150,
+                columnNumber: 13
+            }, ("TURBOPACK compile-time value", void 0)),
+            isTransferring && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].form, {
+                onSubmit: handleTransfer,
+                className: "mt-4 pt-3 border-t border-cyan-500/30 space-y-3",
+                initial: {
+                    opacity: 0,
+                    height: 0
+                },
+                animate: {
+                    opacity: 1,
+                    height: 'auto'
+                },
+                exit: {
+                    opacity: 0,
+                    height: 0
+                },
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-xs font-mono text-cyan-400/80",
+                        children: transferMessage
+                    }, void 0, false, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 186,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                        type: "number",
+                        step: "0.01",
+                        min: "0.01",
+                        max: balance,
+                        value: transferAmount,
+                        onChange: (e)=>setTransferAmount(Number(e.target.value)),
+                        placeholder: "AMOUNT (ABN)",
+                        className: "w-full bg-cyan-900/30 p-2 text-cyan-200 border border-cyan-500/50 focus:border-cyan-400 font-mono text-sm rounded-md"
+                    }, void 0, false, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 188,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                        value: targetFriendId,
+                        onChange: (e)=>setTargetFriendId(e.target.value),
+                        className: "w-full bg-cyan-900/30 p-2 text-cyan-200 border border-cyan-500/50 focus:border-cyan-400 font-mono text-sm appearance-none rounded-md",
+                        children: friends.map((friend)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                value: friend.id,
+                                children: [
+                                    friend.name,
+                                    " (",
+                                    friend.id.substring(0, 7),
+                                    "...)"
+                                ]
+                            }, friend.id, true, {
+                                fileName: "[project]/pages/RewardsPage.tsx",
+                                lineNumber: 205,
+                                columnNumber: 29
+                            }, ("TURBOPACK compile-time value", void 0)))
+                    }, void 0, false, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 199,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].button, {
+                        type: "submit",
+                        whileTap: {
+                            scale: 0.98
+                        },
+                        // Adjusted padding
+                        className: `w-full py-2.5 font-bold tracking-wider rounded-lg transition-all duration-200 ${transferStatus === "SUCCESS" ? "bg-green-600/70" : transferStatus === "ERROR" ? "bg-red-600/70" : "bg-cyan-600/70 hover:bg-cyan-600"}`,
+                        disabled: transferStatus === "SUCCESS",
+                        children: transferStatus === "SUCCESS" ? "CONFIRMED" : "EXECUTE TRANSFER"
+                    }, void 0, false, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 209,
+                        columnNumber: 21
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/pages/RewardsPage.tsx",
+                lineNumber: 179,
+                columnNumber: 17
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/pages/RewardsPage.tsx",
+        lineNumber: 138,
+        columnNumber: 9
+    }, ("TURBOPACK compile-time value", void 0));
+};
+_s(BalanceCard, "HSFWuwB/MNyG3cnE1f2O4C6rt24=");
+_c1 = BalanceCard;
+const RedeemPanel = ({ onRedeem })=>{
+    _s1();
+    const [scanStatus, setScanStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])("IDLE");
+    const [fileName, setFileName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    // Ref for file input to trigger it programmatically
+    const fileInputRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const handleFileUpload = (e)=>{
+        const file = e.target.files?.[0];
+        if (file) {
+            setFileName(file.name);
+            setScanStatus("SCANNING");
+            // Simulate image processing delay
+            setTimeout(()=>{
+                // Mock: Successful scan yields 18.90 ABN
+                const rewardAmount = 18.90;
+                setScanStatus("SUCCESS");
+                onRedeem(rewardAmount); // Trigger parent update
+                // Reset after showing success
+                setTimeout(()=>{
+                    setScanStatus("IDLE");
+                    setFileName(null);
+                }, 2500);
+            }, 3000);
+        }
+    };
+    const handleCameraScan = ()=>{
+        // Simulate camera access and live QR detection
+        setFileName(null); // Clear any previous file name
+        setScanStatus("SCANNING");
+        // Simulate scan delay
+        setTimeout(()=>{
+            // Mock: Successful scan yields 12.50 ABN
+            const rewardAmount = 12.50;
+            setScanStatus("SUCCESS");
+            onRedeem(rewardAmount); // Trigger parent update
+            // Reset after showing success
+            setTimeout(()=>{
+                setScanStatus("IDLE");
+            }, 2500);
+        }, 4000);
+    };
+    const statusMessage = scanStatus === "SCANNING" ? fileName ? `PROCESSING IMAGE: ${fileName}...` : "ACTIVATING CAMERA AND SCANNING LIVE FEED..." : scanStatus === "SUCCESS" ? `REWARD CLAIMED! +${MOCK_TRANSACTIONS[0].amount.toFixed(2)} ABN Added.` // Using a mock amount for message
+     : scanStatus === "ERROR" ? "SCAN FAILED: QR Code unreadable or already redeemed." : "Upload a screenshot of your E-book QR code or use your camera for a live scan.";
+    const statusColor = scanStatus === "SUCCESS" ? "text-green-400" : scanStatus === "ERROR" ? "text-red-400" : "text-cyan-400/80";
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StaggeredBox, {
+        className: "p-6 h-full flex flex-col",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex items-center gap-3 mb-4 border-b border-cyan-500/30 pb-3 flex-shrink-0",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$qr$2d$code$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__QrCode$3e$__["QrCode"], {
+                        size: 24,
+                        className: "text-red-400"
+                    }, void 0, false, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 283,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                        className: "text-xl font-mono tracking-wider text-red-300",
+                        children: "QR CODE REDEMPTION"
+                    }, void 0, false, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 284,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/pages/RewardsPage.tsx",
+                lineNumber: 282,
+                columnNumber: 13
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex flex-col gap-4 flex-grow",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-sm opacity-70",
+                        children: "Claim your variable **ABN Crypto reward** from your E-book purchase receipt by scanning the unique QR code."
+                    }, void 0, false, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 290,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                        type: "file",
+                        ref: fileInputRef,
+                        onChange: handleFileUpload,
+                        accept: "image/*",
+                        className: "hidden",
+                        disabled: scanStatus !== "IDLE"
+                    }, void 0, false, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 295,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].button, {
+                        onClick: ()=>fileInputRef.current?.click(),
+                        whileHover: {
+                            scale: 1.02
+                        },
+                        whileTap: {
+                            scale: 0.98
+                        },
+                        // Retaining nowrap for the shorter button
+                        className: "w-full py-2.5 font-bold tracking-wider rounded-lg transition-all duration-200 bg-cyan-700/50 hover:bg-cyan-600/70 flex items-center justify-center gap-2 whitespace-nowrap",
+                        disabled: scanStatus !== "IDLE",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$cloud$2d$upload$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__UploadCloud$3e$__["UploadCloud"], {
+                                size: 18
+                            }, void 0, false, {
+                                fileName: "[project]/pages/RewardsPage.tsx",
+                                lineNumber: 312,
+                                columnNumber: 21
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            " UPLOAD QR SCREENSHOT"
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 304,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].button, {
+                        onClick: handleCameraScan,
+                        whileHover: {
+                            scale: 1.02
+                        },
+                        whileTap: {
+                            scale: 0.98
+                        },
+                        // REMOVED whitespace-nowrap to allow wrapping
+                        // The flex items-center ensures the icon is vertically aligned to the center of the button block.
+                        className: "w-full py-2.5 font-bold tracking-wider rounded-lg transition-all duration-200 bg-red-700/50 hover:bg-red-600/70 flex items-center justify-center gap-2 text-center",
+                        disabled: scanStatus !== "IDLE",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$camera$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Camera$3e$__["Camera"], {
+                                size: 18
+                            }, void 0, false, {
+                                fileName: "[project]/pages/RewardsPage.tsx",
+                                lineNumber: 324,
+                                columnNumber: 21
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            " SCAN VIA PHONE CAMERA (SIMULATED)"
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 315,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/pages/RewardsPage.tsx",
+                lineNumber: 289,
+                columnNumber: 13
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: `mt-4 text-xs font-mono ${statusColor} text-center`,
+                children: statusMessage
+            }, void 0, false, {
+                fileName: "[project]/pages/RewardsPage.tsx",
+                lineNumber: 329,
+                columnNumber: 13
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/pages/RewardsPage.tsx",
+        lineNumber: 281,
+        columnNumber: 9
+    }, ("TURBOPACK compile-time value", void 0));
+};
+_s1(RedeemPanel, "BkfuY+HuVlfLrkYdtT+KYgCeYT0=");
+_c2 = RedeemPanel;
+const RecentActivityPanel = ({ transactions })=>{
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StaggeredBox, {
+        className: "p-4 w-full h-full flex flex-col",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                className: "text-sm font-semibold mb-3 tracking-wider text-cyan-400 border-b border-cyan-500/30 pb-2 flex items-center gap-2 flex-shrink-0",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$column$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BarChart3$3e$__["BarChart3"], {
+                        size: 16
+                    }, void 0, false, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 338,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    " RECENT REWARD TRANSACTIONS"
+                ]
+            }, void 0, true, {
+                fileName: "[project]/pages/RewardsPage.tsx",
+                lineNumber: 337,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "overflow-y-auto pr-2 flex-grow scrollbar-thin min-h-0",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                    className: "space-y-3",
-                    children: MOCK_THREADS.map((thread, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].li, {
-                            className: `p-3 rounded-lg hover:bg-cyan-900/20 transition-colors cursor-pointer border-l-4 ${thread.channelId === 2 ? 'border-red-500' : 'border-cyan-500'}`,
+                    className: "space-y-2",
+                    children: transactions.map((tx, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].li, {
+                            // Retaining fix: increased horizontal padding (px-3) and ensure content is always in line (items-start)
+                            className: `flex justify-between items-start p-3 rounded-md transition-colors ${tx.source.includes("E-book") || tx.source.includes("QR Code Redemption") ? 'bg-cyan-900/10 hover:bg-cyan-900/20' : 'bg-green-900/10 hover:bg-green-900/20'}`,
                             initial: {
-                                x: -20,
+                                x: -10,
                                 opacity: 0
                             },
                             animate: {
@@ -1175,220 +1399,143 @@ const ThreadListPanel = ()=>{
                                 opacity: 1
                             },
                             transition: {
-                                duration: 0.4,
-                                delay: 0.4 + index * 0.01
+                                duration: 0.3,
+                                delay: 0.4 + index * 0.05
                             },
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                    className: "text-sm font-medium text-white/90 truncate",
-                                    children: thread.title
-                                }, void 0, false, {
-                                    fileName: "[project]/pages/CommunityPage.tsx",
-                                    lineNumber: 204,
-                                    columnNumber: 29
-                                }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex justify-between items-center text-[11px] opacity-70 mt-1 font-mono",
+                                    className: "flex flex-col text-xs font-mono max-w-[65%]",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-cyan-300/80",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$hash$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Hash$3e$__["Hash"], {
-                                                    size: 10,
-                                                    className: "inline-block mr-1"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/pages/CommunityPage.tsx",
-                                                    lineNumber: 207,
-                                                    columnNumber: 37
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                getChannelName(thread.channelId)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/pages/CommunityPage.tsx",
-                                            lineNumber: 206,
+                                            className: "text-white/90 truncate",
+                                            children: tx.source
+                                        }, void 0, false, {
+                                            fileName: "[project]/pages/RewardsPage.tsx",
+                                            lineNumber: 356,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0)),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex items-center gap-3",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "opacity-50 text-[10px] whitespace-nowrap",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "flex items-center gap-1",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$square$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageSquare$3e$__["MessageSquare"], {
-                                                            size: 10
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/pages/CommunityPage.tsx",
-                                                            lineNumber: 212,
-                                                            columnNumber: 41
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        " ",
-                                                        thread.replies,
-                                                        " Replies"
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/pages/CommunityPage.tsx",
-                                                    lineNumber: 211,
-                                                    columnNumber: 37
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "flex items-center gap-1",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
-                                                            size: 10
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/pages/CommunityPage.tsx",
-                                                            lineNumber: 215,
-                                                            columnNumber: 41
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        " ",
-                                                        thread.lastActivity
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/pages/CommunityPage.tsx",
-                                                    lineNumber: 214,
-                                                    columnNumber: 37
-                                                }, ("TURBOPACK compile-time value", void 0))
+                                                new Date(tx.date).toLocaleDateString(),
+                                                " ",
+                                                new Date(tx.date).toLocaleTimeString()
                                             ]
                                         }, void 0, true, {
-                                            fileName: "[project]/pages/CommunityPage.tsx",
-                                            lineNumber: 210,
+                                            fileName: "[project]/pages/RewardsPage.tsx",
+                                            lineNumber: 357,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
-                                    fileName: "[project]/pages/CommunityPage.tsx",
-                                    lineNumber: 205,
+                                    fileName: "[project]/pages/RewardsPage.tsx",
+                                    lineNumber: 354,
+                                    columnNumber: 29
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-sm font-bold text-green-400 flex-shrink-0 text-right whitespace-nowrap ml-2",
+                                    children: [
+                                        tx.amount >= 0 ? '+' : '',
+                                        tx.amount.toFixed(2),
+                                        " ABN"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/pages/RewardsPage.tsx",
+                                    lineNumber: 360,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
-                        }, thread.id, true, {
-                            fileName: "[project]/pages/CommunityPage.tsx",
-                            lineNumber: 197,
+                        }, tx.id, true, {
+                            fileName: "[project]/pages/RewardsPage.tsx",
+                            lineNumber: 344,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0)))
                 }, void 0, false, {
-                    fileName: "[project]/pages/CommunityPage.tsx",
-                    lineNumber: 195,
+                    fileName: "[project]/pages/RewardsPage.tsx",
+                    lineNumber: 342,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
-                fileName: "[project]/pages/CommunityPage.tsx",
-                lineNumber: 194,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0))
-        ]
-    }, void 0, true, {
-        fileName: "[project]/pages/CommunityPage.tsx",
-        lineNumber: 181,
-        columnNumber: 9
-    }, ("TURBOPACK compile-time value", void 0)));
-};
-_c2 = ThreadListPanel;
-const ActiveUsersPanel = ()=>{
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StaggeredBox, {
-        className: "p-4 w-full h-full flex flex-col",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                className: "text-sm font-semibold mb-3 tracking-wider text-cyan-400 border-b border-cyan-500/30 pb-2 flex items-center gap-2 flex-shrink-0",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {
-                        size: 16
-                    }, void 0, false, {
-                        fileName: "[project]/pages/CommunityPage.tsx",
-                        lineNumber: 232,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    " ACTIVE TERMINALS (",
-                    MOCK_USERS.length,
-                    ")"
-                ]
-            }, void 0, true, {
-                fileName: "[project]/pages/CommunityPage.tsx",
-                lineNumber: 231,
+                fileName: "[project]/pages/RewardsPage.tsx",
+                lineNumber: 341,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                className: "space-y-2 overflow-y-auto flex-grow min-h-0 pr-2 scrollbar-thin",
-                children: MOCK_USERS.map((user)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                        className: "flex justify-between items-center text-xs font-mono border-b border-cyan-500/10 pb-1",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "opacity-90",
-                                children: user.name
-                            }, void 0, false, {
-                                fileName: "[project]/pages/CommunityPage.tsx",
-                                lineNumber: 237,
-                                columnNumber: 25
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center gap-1",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: `w-2 h-2 rounded-full ${user.color.includes('green') ? 'bg-green-500' : user.color.includes('yellow') ? 'bg-yellow-500' : user.color.includes('purple') ? 'bg-purple-500' : 'bg-gray-500'} animate-pulse-slow`
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/CommunityPage.tsx",
-                                        lineNumber: 239,
-                                        columnNumber: 29
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: `${user.color} opacity-70`,
-                                        children: user.status
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/CommunityPage.tsx",
-                                        lineNumber: 240,
-                                        columnNumber: 29
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/pages/CommunityPage.tsx",
-                                lineNumber: 238,
-                                columnNumber: 25
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, user.id, true, {
-                        fileName: "[project]/pages/CommunityPage.tsx",
-                        lineNumber: 236,
-                        columnNumber: 21
-                    }, ("TURBOPACK compile-time value", void 0)))
-            }, void 0, false, {
-                fileName: "[project]/pages/CommunityPage.tsx",
-                lineNumber: 234,
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].button, {
+                whileHover: {
+                    scale: 1.02
+                },
+                whileTap: {
+                    scale: 0.98
+                },
+                className: "mt-3 py-2 text-xs font-mono text-cyan-300 hover:text-[#66fff0] flex items-center justify-center gap-2 border-t border-cyan-500/30 pt-2",
+                children: [
+                    "VIEW FULL LEDGER ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
+                        size: 14
+                    }, void 0, false, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 373,
+                        columnNumber: 34
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/pages/RewardsPage.tsx",
+                lineNumber: 368,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
-        fileName: "[project]/pages/CommunityPage.tsx",
-        lineNumber: 230,
+        fileName: "[project]/pages/RewardsPage.tsx",
+        lineNumber: 336,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
-_c3 = ActiveUsersPanel;
+_c3 = RecentActivityPanel;
 /* ------------------------------
     MAIN APPLICATION
     ------------------------------ */ const App = ()=>{
-    _s();
-    // State is typed as string
-    const [pageTitle, setPageTitle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])("COMMUNITY HUB");
-    const simpleFade = {
-        initial: {
-            opacity: 0
-        },
-        animate: {
-            opacity: 1,
-            transition: {
-                duration: 0.8,
-                ease: "easeOut"
-            }
-        }
+    _s2();
+    const [abnBalance, setAbnBalance] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(145.75);
+    const [transactions, setTransactions] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(MOCK_TRANSACTIONS);
+    // Function to handle a successful reward redemption
+    const handleRewardRedeem = (amount)=>{
+        const newReward = {
+            id: Date.now(),
+            source: "QR Code Redemption (E-book Reward)",
+            amount: amount,
+            date: new Date().toISOString()
+        };
+        setAbnBalance((prev)=>prev + amount);
+        setTransactions((prev)=>[
+                newReward,
+                ...prev
+            ]);
     };
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "relative w-screen h-screen flex items-center justify-center overflow-hidden bg-[#00050a] text-cyan-200",
+    // Function to handle a successful transfer to a friend
+    const handleTransfer = (amount, friendId)=>{
+        const friend = MOCK_FRIENDS.find((f)=>f.id === friendId);
+        if (!friend) return;
+        const newTransfer = {
+            id: Date.now() + 1,
+            source: `Transfer Out to ${friend.name}`,
+            amount: -amount,
+            date: new Date().toISOString()
+        };
+        setAbnBalance((prev)=>prev - amount);
+        setTransactions((prev)=>[
+                newTransfer,
+                ...prev
+            ]);
+    };
+    return(// FIX: Added pt-16 (padding-top) to push content below the fixed header
+    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "relative w-screen h-screen flex flex-col items-center justify-start overflow-hidden bg-[#00050a] text-cyan-200 pt-16",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 bg-[radial-gradient(circle_at_center,_#0a599e_0%,_#0a1631_40%,_#211c39_100%)]"
             }, void 0, false, {
-                fileName: "[project]/pages/CommunityPage.tsx",
-                lineNumber: 265,
+                fileName: "[project]/pages/RewardsPage.tsx",
+                lineNumber: 422,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1399,103 +1546,76 @@ _c3 = ActiveUsersPanel;
                     backgroundPosition: '0 0, 20px 20px'
                 }
             }, void 0, false, {
-                fileName: "[project]/pages/CommunityPage.tsx",
-                lineNumber: 268,
+                fileName: "[project]/pages/RewardsPage.tsx",
+                lineNumber: 425,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].header, {
-                className: "absolute top-6 left-6 right-6 z-50 pointer-events-auto",
-                ...simpleFade,
-                transition: {
-                    ...simpleFade.animate.transition,
-                    delay: 0.1
-                },
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                    pageTitle: pageTitle
-                }, void 0, false, {
-                    fileName: "[project]/pages/CommunityPage.tsx",
-                    lineNumber: 277,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0))
-            }, void 0, false, {
-                fileName: "[project]/pages/CommunityPage.tsx",
-                lineNumber: 271,
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                fileName: "[project]/pages/RewardsPage.tsx",
+                lineNumber: 428,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                className: "relative z-40 w-full max-w-7xl h-[85vh] p-8 mt-28 grid grid-cols-1 md:grid-cols-4 gap-8",
+                // Removed mt-12 (margin-top) as pt-16 on the section handles the spacing
+                // Used mx-auto to center the content block horizontally
+                className: "relative z-40 w-full max-w-6xl p-8 mx-auto flex-grow grid grid-cols-1 md:grid-cols-3 gap-8",
                 variants: containerVariants,
                 initial: "hidden",
                 animate: "visible",
+                // Max height ensures it fits nicely within the remaining space
+                style: {
+                    maxHeight: 'calc(100vh - 4rem)'
+                },
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "col-span-1 md:col-span-3 flex flex-col space-y-6 overflow-hidden h-full",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex-shrink-0",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        className: "text-2xl font-mono tracking-wider mb-4 text-[#66fff0] border-b border-cyan-500/50 pb-2",
-                                        children: "NETWORK CHANNELS"
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/CommunityPage.tsx",
-                                        lineNumber: 294,
-                                        columnNumber: 25
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6",
-                                        children: MOCK_CHANNELS.map((channel)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ChannelCard, {
-                                                channel: channel
-                                            }, channel.id, false, {
-                                                fileName: "[project]/pages/CommunityPage.tsx",
-                                                lineNumber: 299,
-                                                columnNumber: 33
-                                            }, ("TURBOPACK compile-time value", void 0)))
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/CommunityPage.tsx",
-                                        lineNumber: 297,
-                                        columnNumber: 25
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/pages/CommunityPage.tsx",
-                                lineNumber: 293,
-                                columnNumber: 21
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex-grow",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ThreadListPanel, {}, void 0, false, {
-                                    fileName: "[project]/pages/CommunityPage.tsx",
-                                    lineNumber: 306,
-                                    columnNumber: 25
-                                }, ("TURBOPACK compile-time value", void 0))
-                            }, void 0, false, {
-                                fileName: "[project]/pages/CommunityPage.tsx",
-                                lineNumber: 305,
-                                columnNumber: 21
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/pages/CommunityPage.tsx",
-                        lineNumber: 291,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "col-span-1 h-full",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ActiveUsersPanel, {}, void 0, false, {
-                            fileName: "[project]/pages/CommunityPage.tsx",
-                            lineNumber: 312,
+                        className: "col-span-1",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(BalanceCard, {
+                            balance: abnBalance,
+                            user: MOCK_USER,
+                            friends: MOCK_FRIENDS,
+                            onTransfer: handleTransfer
+                        }, void 0, false, {
+                            fileName: "[project]/pages/RewardsPage.tsx",
+                            lineNumber: 443,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
-                        fileName: "[project]/pages/CommunityPage.tsx",
-                        lineNumber: 311,
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 442,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "col-span-1",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RedeemPanel, {
+                            onRedeem: handleRewardRedeem
+                        }, void 0, false, {
+                            fileName: "[project]/pages/RewardsPage.tsx",
+                            lineNumber: 453,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
+                    }, void 0, false, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 452,
+                        columnNumber: 17
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "col-span-1",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RecentActivityPanel, {
+                            transactions: transactions
+                        }, void 0, false, {
+                            fileName: "[project]/pages/RewardsPage.tsx",
+                            lineNumber: 458,
+                            columnNumber: 21
+                        }, ("TURBOPACK compile-time value", void 0))
+                    }, void 0, false, {
+                        fileName: "[project]/pages/RewardsPage.tsx",
+                        lineNumber: 457,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
-                fileName: "[project]/pages/CommunityPage.tsx",
-                lineNumber: 283,
+                fileName: "[project]/pages/RewardsPage.tsx",
+                lineNumber: 431,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -1527,37 +1647,37 @@ _c3 = ActiveUsersPanel;
                 }
             `
             }, void 0, false, {
-                fileName: "[project]/pages/CommunityPage.tsx",
-                lineNumber: 317,
+                fileName: "[project]/pages/RewardsPage.tsx",
+                lineNumber: 463,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
-        fileName: "[project]/pages/CommunityPage.tsx",
-        lineNumber: 263,
+        fileName: "[project]/pages/RewardsPage.tsx",
+        lineNumber: 419,
         columnNumber: 9
-    }, ("TURBOPACK compile-time value", void 0));
+    }, ("TURBOPACK compile-time value", void 0)));
 };
-_s(App, "A0BL+SVQ9OyUbC9jAnTlcUF0c6c=");
+_s2(App, "aEPC0WsnTPOtbYMt8tNufGIKHqg=");
 _c4 = App;
 const __TURBOPACK__default__export__ = App;
 var _c, _c1, _c2, _c3, _c4;
 __turbopack_context__.k.register(_c, "StaggeredBox");
-__turbopack_context__.k.register(_c1, "ChannelCard");
-__turbopack_context__.k.register(_c2, "ThreadListPanel");
-__turbopack_context__.k.register(_c3, "ActiveUsersPanel");
+__turbopack_context__.k.register(_c1, "BalanceCard");
+__turbopack_context__.k.register(_c2, "RedeemPanel");
+__turbopack_context__.k.register(_c3, "RecentActivityPanel");
 __turbopack_context__.k.register(_c4, "App");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
-"[next]/entry/page-loader.ts { PAGE => \"[project]/pages/CommunityPage.tsx [client] (ecmascript)\" } [client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[next]/entry/page-loader.ts { PAGE => \"[project]/pages/RewardsPage.tsx [client] (ecmascript)\" } [client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 
-const PAGE_PATH = "/CommunityPage";
+const PAGE_PATH = "/RewardsPage";
 (window.__NEXT_P = window.__NEXT_P || []).push([
     PAGE_PATH,
     ()=>{
-        return __turbopack_context__.r("[project]/pages/CommunityPage.tsx [client] (ecmascript)");
+        return __turbopack_context__.r("[project]/pages/RewardsPage.tsx [client] (ecmascript)");
     }
 ]);
 // @ts-expect-error module.hot exists
@@ -1570,11 +1690,11 @@ if (module.hot) {
     });
 }
 }),
-"[hmr-entry]/hmr-entry.js { ENTRY => \"[project]/pages/CommunityPage\" }", ((__turbopack_context__) => {
+"[hmr-entry]/hmr-entry.js { ENTRY => \"[project]/pages/RewardsPage\" }", ((__turbopack_context__) => {
 "use strict";
 
-__turbopack_context__.r("[next]/entry/page-loader.ts { PAGE => \"[project]/pages/CommunityPage.tsx [client] (ecmascript)\" } [client] (ecmascript)");
+__turbopack_context__.r("[next]/entry/page-loader.ts { PAGE => \"[project]/pages/RewardsPage.tsx [client] (ecmascript)\" } [client] (ecmascript)");
 }),
 ]);
 
-//# sourceMappingURL=%5Broot-of-the-server%5D__192df4b4._.js.map
+//# sourceMappingURL=%5Broot-of-the-server%5D__76ce04a3._.js.map

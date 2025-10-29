@@ -1,7 +1,8 @@
 {
-  "/": "pages/index.js",
   "/CommunityPage": "pages/CommunityPage.js",
+  "/HelpPage": "pages/HelpPage.js",
+  "/RewardsPage": "pages/RewardsPage.js",
+  "/StorePage": "pages/StorePage.js",
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
-  "/_error": "pages/_error.js"
+  "/_document": "pages/_document.js"
 }

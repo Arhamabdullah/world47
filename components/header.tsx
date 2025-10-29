@@ -13,7 +13,7 @@ interface NavButtonProps {
 const NavButton: React.FC<NavButtonProps> = ({ label, href }) => {
   const [isHovering, setIsHovering] = useState(false);
 
-  return (
+  const ButtonContent = (
     <motion.div
       whileTap={{ scale: href ? 0.95 : 1 }}
       onMouseEnter={() => setIsHovering(true)}
@@ -22,7 +22,7 @@ const NavButton: React.FC<NavButtonProps> = ({ label, href }) => {
         href ? "cursor-pointer" : "cursor-default opacity-90"
       }`}
       style={{
-        width: "110px", // ✅ consistent button width for even spacing
+        width: "110px", // consistent width for spacing
         textAlign: "center",
       }}
       animate={{
@@ -64,6 +64,15 @@ const NavButton: React.FC<NavButtonProps> = ({ label, href }) => {
       </div>
     </motion.div>
   );
+
+  // ✅ Wrap in <Link> only when href exists
+  return href ? (
+    <Link href={href} className="block">
+      {ButtonContent}
+    </Link>
+  ) : (
+    ButtonContent
+  );
 };
 
 // --- Action Button Component ---
@@ -102,7 +111,7 @@ export default function Header() {
   }, [audioActive]);
 
   const navPages: NavButtonProps[] = [
-    { label: "World47", href: "/index" },
+    { label: "World47", href: "/" },
     { label: "Community", href: "/CommunityPage" },
     { label: "HELP", href: "/HelpPage" },
     { label: "REWARDS", href: "/RewardsPage" },
@@ -121,11 +130,11 @@ export default function Header() {
       transition={{ duration: 1 }}
     >
       {/* Left Section */}
-      <div className="flex items-center gap-8 flex-shrink-1"> {/* ✅ Increased gap */}
+      <div className="flex items-center gap-8 flex-shrink-1">
         <div className="text-2xl font-bold tracking-tight text-cyan-100 flex-shrink-0">
           WORLD 47
         </div>
-        <nav className="hidden xl:flex flex-nowrap gap-6 text-sm"> {/* ✅ Wider gap */}
+        <nav className="hidden xl:flex flex-nowrap gap-6 text-sm">
           {navPages.map((page, i) => (
             <NavButton key={i} label={page.label} href={page.href} />
           ))}
