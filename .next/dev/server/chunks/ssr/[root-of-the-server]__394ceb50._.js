@@ -355,7 +355,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$XAxis$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/recharts/es6/cartesian/XAxis.js [ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$YAxis$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/recharts/es6/cartesian/YAxis.js [ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$ResponsiveContainer$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/recharts/es6/component/ResponsiveContainer.js [ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$externals$5d2f$three__$5b$external$5d$__$28$three$2c$__esm_import$29$__ = __turbopack_context__.i("[externals]/three [external] (three, esm_import)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$three__$5b$external$5d$__$28$three$2c$__esm_import$29$__ = __turbopack_context__.i("[externals]/three [external] (three, esm_import)"); // <-- ensure Header.tsx is placed here (adjust path if needed)
 var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
     __TURBOPACK__imported__module__$5b$externals$5d2f$framer$2d$motion__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__,
     __TURBOPACK__imported__module__$5b$externals$5d2f$three__$5b$external$5d$__$28$three$2c$__esm_import$29$__
@@ -368,7 +368,12 @@ var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
 ;
 ;
 ;
-;
+const EASE_OUT = [
+    0.33,
+    1,
+    0.68,
+    1
+];
 ;
 // --- ANIMATION VARIANTS (TS Resolution: Variants type added) ---
 // 👇 Explicitly type Framer Motion Variants
@@ -380,7 +385,7 @@ const panelVariants = {
         opacity: 1,
         transition: {
             duration: 0.35,
-            ease: "easeOut"
+            ease: EASE_OUT
         }
     }
 };
@@ -396,7 +401,7 @@ const contentVariants = {
         transition: {
             delay: 0.3,
             duration: 0.3,
-            ease: "easeOut"
+            ease: EASE_OUT
         }
     }
 };
@@ -453,7 +458,7 @@ const containerVariants = {
             opacity: 1,
             transition: {
                 duration: 0.8,
-                ease: "easeOut"
+                ease: EASE_OUT
             }
         },
         hidden: {
@@ -478,7 +483,7 @@ const containerVariants = {
                 className: "jsx-9be69bbffa22757f" + " " + "absolute inset-0 w-full h-full object-cover"
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 132,
+                lineNumber: 138,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("audio", {
@@ -488,7 +493,7 @@ const containerVariants = {
                 className: "jsx-9be69bbffa22757f"
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 141,
+                lineNumber: 147,
                 columnNumber: 7
             }, this),
             !hasStarted && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$framer$2d$motion__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].button, {
@@ -503,7 +508,7 @@ const containerVariants = {
                 },
                 transition: {
                     duration: 0.8,
-                    ease: "easeOut"
+                    ease: EASE_OUT
                 },
                 className: "relative z-50 px-10 py-4 text-xl font-semibold tracking-wider text-cyan-300 border border-cyan-500/40 rounded-l bg-black/40 backdrop-blur-lg hover:bg-cyan-500/20 hover:text-cyan-100 transition-all duration-300 pointer-events-auto",
                 children: [
@@ -514,13 +519,13 @@ const containerVariants = {
                         children: "WORLD 47"
                     }, void 0, false, {
                         fileName: "[project]/components/PlanetSection.tsx",
-                        lineNumber: 153,
+                        lineNumber: 160,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 145,
+                lineNumber: 151,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$framer$2d$motion__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].div, {
@@ -537,7 +542,7 @@ const containerVariants = {
                 className: "absolute inset-0 bg-black pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 158,
+                lineNumber: 165,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$jsx$2f$style$2e$js__$5b$external$5d$__$28$styled$2d$jsx$2f$style$2e$js$2c$__cjs$29$__["default"], {
@@ -547,7 +552,7 @@ const containerVariants = {
         ]
     }, void 0, true, {
         fileName: "[project]/components/PlanetSection.tsx",
-        lineNumber: 125,
+        lineNumber: 131,
         columnNumber: 5
     }, this);
 }
@@ -563,12 +568,12 @@ const containerVariants = {
             children: children
         }, void 0, false, {
             fileName: "[project]/components/PlanetSection.tsx",
-            lineNumber: 190,
+            lineNumber: 197,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/PlanetSection.tsx",
-        lineNumber: 189,
+        lineNumber: 196,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -605,7 +610,7 @@ const containerVariants = {
                 ]
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 222,
+                lineNumber: 229,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("shaderMaterial", {
@@ -642,13 +647,13 @@ const containerVariants = {
                 side: __TURBOPACK__imported__module__$5b$externals$5d2f$three__$5b$external$5d$__$28$three$2c$__esm_import$29$__["BackSide"]
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 224,
+                lineNumber: 231,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/PlanetSection.tsx",
-        lineNumber: 221,
+        lineNumber: 228,
         columnNumber: 5
     }, this));
 }
@@ -671,7 +676,7 @@ function GlobeSphere({ texture, isDragging }) {
                         ]
                     }, void 0, false, {
                         fileName: "[project]/components/PlanetSection.tsx",
-                        lineNumber: 264,
+                        lineNumber: 271,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meshBasicMaterial", {
@@ -680,26 +685,26 @@ function GlobeSphere({ texture, isDragging }) {
                         toneMapped: false
                     }, void 0, false, {
                         fileName: "[project]/components/PlanetSection.tsx",
-                        lineNumber: 266,
+                        lineNumber: 273,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 263,
+                lineNumber: 270,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(NeonGlow, {
                 isDragging: isDragging
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 268,
+                lineNumber: 275,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/PlanetSection.tsx",
-        lineNumber: 262,
+        lineNumber: 269,
         columnNumber: 5
     }, this));
 }
@@ -721,7 +726,7 @@ function WindLayer({ texture }) {
                 ]
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 284,
+                lineNumber: 291,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("meshBasicMaterial", {
@@ -732,13 +737,13 @@ function WindLayer({ texture }) {
                 depthWrite: false
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 285,
+                lineNumber: 292,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/PlanetSection.tsx",
-        lineNumber: 283,
+        lineNumber: 290,
         columnNumber: 5
     }, this));
 }
@@ -828,12 +833,12 @@ function WindLayer({ texture }) {
             material: material
         }, void 0, false, {
             fileName: "[project]/components/PlanetSection.tsx",
-            lineNumber: 388,
+            lineNumber: 395,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/PlanetSection.tsx",
-        lineNumber: 387,
+        lineNumber: 394,
         columnNumber: 5
     }, this));
 }
@@ -872,7 +877,7 @@ function WindLayer({ texture }) {
                         children: "[TICKER]"
                     }, void 0, false, {
                         fileName: "[project]/components/PlanetSection.tsx",
-                        lineNumber: 410,
+                        lineNumber: 417,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     tickerText,
@@ -881,24 +886,24 @@ function WindLayer({ texture }) {
                         children: "[TICKER]"
                     }, void 0, false, {
                         fileName: "[project]/components/PlanetSection.tsx",
-                        lineNumber: 412,
+                        lineNumber: 419,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     tickerText
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 409,
+                lineNumber: 416,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/components/PlanetSection.tsx",
-            lineNumber: 408,
+            lineNumber: 415,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/PlanetSection.tsx",
-        lineNumber: 407,
+        lineNumber: 414,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -962,7 +967,7 @@ const TypingConsoleContent = ()=>{
                 children: "NETWORK ACCESS LOG"
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 480,
+                lineNumber: 487,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -975,18 +980,18 @@ const TypingConsoleContent = ()=>{
                                 className: "animate-pulse bg-cyan-500 w-1 h-3 inline-block ml-0.5 align-middle"
                             }, void 0, false, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 486,
+                                lineNumber: 493,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, index, true, {
                         fileName: "[project]/components/PlanetSection.tsx",
-                        lineNumber: 483,
+                        lineNumber: 490,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 481,
+                lineNumber: 488,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("style", {
@@ -1001,13 +1006,13 @@ const TypingConsoleContent = ()=>{
         `
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 491,
+                lineNumber: 498,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/PlanetSection.tsx",
-        lineNumber: 479,
+        lineNumber: 486,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -1134,7 +1139,7 @@ function App() {
             opacity: 1,
             transition: {
                 duration: 1.0,
-                ease: "easeOut"
+                ease: EASE_OUT
             }
         }
     };
@@ -1143,7 +1148,7 @@ function App() {
         onComplete: handleLoaderComplete
     }, void 0, false, {
         fileName: "[project]/components/PlanetSection.tsx",
-        lineNumber: 627,
+        lineNumber: 637,
         columnNumber: 25
     }, this);
     /* ------------------------------
@@ -1155,7 +1160,7 @@ function App() {
                 className: "absolute inset-0 bg-[radial-gradient(circle_at_center,_#0a599e_0%,_#0a1631_40%,_#211c39_100%)]"
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 634,
+                lineNumber: 644,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1175,7 +1180,7 @@ function App() {
                             intensity: 0.8
                         }, void 0, false, {
                             fileName: "[project]/components/PlanetSection.tsx",
-                            lineNumber: 639,
+                            lineNumber: 649,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("pointLight", {
@@ -1188,7 +1193,7 @@ function App() {
                             intensity: 2.2
                         }, void 0, false, {
                             fileName: "[project]/components/PlanetSection.tsx",
-                            lineNumber: 640,
+                            lineNumber: 650,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("pointLight", {
@@ -1203,7 +1208,7 @@ function App() {
                             decay: 2
                         }, void 0, false, {
                             fileName: "[project]/components/PlanetSection.tsx",
-                            lineNumber: 641,
+                            lineNumber: 651,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("pointLight", {
@@ -1218,12 +1223,12 @@ function App() {
                             decay: 2
                         }, void 0, false, {
                             fileName: "[project]/components/PlanetSection.tsx",
-                            lineNumber: 642,
+                            lineNumber: 652,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(NetworkMesh, {}, void 0, false, {
                             fileName: "[project]/components/PlanetSection.tsx",
-                            lineNumber: 643,
+                            lineNumber: 653,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(GlobeSphere, {
@@ -1231,14 +1236,14 @@ function App() {
                             isDragging: isDragging
                         }, void 0, false, {
                             fileName: "[project]/components/PlanetSection.tsx",
-                            lineNumber: 644,
+                            lineNumber: 654,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(WindLayer, {
                             texture: windTexture
                         }, void 0, false, {
                             fileName: "[project]/components/PlanetSection.tsx",
-                            lineNumber: 645,
+                            lineNumber: 655,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f40$react$2d$three$2f$drei__$5b$external$5d$__$2840$react$2d$three$2f$drei$2c$__cjs$29$__["OrbitControls"], {
@@ -1251,18 +1256,18 @@ function App() {
                             onEnd: ()=>handleSetIsDragging(false)
                         }, void 0, false, {
                             fileName: "[project]/components/PlanetSection.tsx",
-                            lineNumber: 646,
+                            lineNumber: 656,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/PlanetSection.tsx",
-                    lineNumber: 637,
+                    lineNumber: 647,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 636,
+                lineNumber: 646,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1282,7 +1287,7 @@ function App() {
                                         children: "ABNT01"
                                     }, void 0, false, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 664,
+                                        lineNumber: 674,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1293,7 +1298,7 @@ function App() {
                                                 children: "SYSTEM STATUS"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 666,
+                                                lineNumber: 676,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -1301,13 +1306,13 @@ function App() {
                                                 children: "All systems nominal — monitoring sensors active. Core temperature stable at 72°C."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 667,
+                                                lineNumber: 677,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 665,
+                                        lineNumber: 675,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1317,7 +1322,7 @@ function App() {
                                                 children: "CPU Utilization"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 670,
+                                                lineNumber: 680,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
@@ -1325,19 +1330,19 @@ function App() {
                                                 children: "87.5%"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 671,
+                                                lineNumber: 681,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 669,
+                                        lineNumber: 679,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 663,
+                                lineNumber: 673,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(StaggeredBox, {
@@ -1348,7 +1353,7 @@ function App() {
                                         children: "THREAT ASSESSMENT"
                                     }, void 0, false, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 676,
+                                        lineNumber: 686,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -1360,14 +1365,14 @@ function App() {
                                                 children: "MEDIUM"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 677,
+                                                lineNumber: 687,
                                                 columnNumber: 70
                                             }, this),
                                             ". Proximity: 1.2 AU."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 677,
+                                        lineNumber: 687,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1377,26 +1382,26 @@ function App() {
                                                 children: "Threat Vector"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 679,
+                                                lineNumber: 689,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                                 children: "Kilo-98"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 680,
+                                                lineNumber: 690,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 678,
+                                        lineNumber: 688,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 675,
+                                lineNumber: 685,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(StaggeredBox, {
@@ -1410,61 +1415,6 @@ function App() {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$Bar$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["Bar"], {
                                                 dataKey: "value",
                                                 fill: "#00ffef",
-                                                isAnimationActive: false
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 687,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$XAxis$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["XAxis"], {
-                                                dataKey: "name",
-                                                hide: true
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 688,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$YAxis$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["YAxis"], {
-                                                hide: true,
-                                                domain: [
-                                                    0,
-                                                    128
-                                                ]
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 689,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 686,
-                                        columnNumber: 15
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/components/PlanetSection.tsx",
-                                    lineNumber: 685,
-                                    columnNumber: 13
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 684,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(StaggeredBox, {
-                                className: "p-3 w-64 h-20",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$ResponsiveContainer$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["ResponsiveContainer"], {
-                                    width: "100%",
-                                    height: "100%",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$chart$2f$LineChart$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["LineChart"], {
-                                        data: bands,
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$Line$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["Line"], {
-                                                type: "monotone",
-                                                dataKey: "value",
-                                                stroke: "#00ffef",
-                                                strokeWidth: 2,
-                                                dot: false,
                                                 isAnimationActive: false
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
@@ -1507,6 +1457,61 @@ function App() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(StaggeredBox, {
+                                className: "p-3 w-64 h-20",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$ResponsiveContainer$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["ResponsiveContainer"], {
+                                    width: "100%",
+                                    height: "100%",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$chart$2f$LineChart$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["LineChart"], {
+                                        data: bands,
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$Line$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["Line"], {
+                                                type: "monotone",
+                                                dataKey: "value",
+                                                stroke: "#00ffef",
+                                                strokeWidth: 2,
+                                                dot: false,
+                                                isAnimationActive: false
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/PlanetSection.tsx",
+                                                lineNumber: 707,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$XAxis$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["XAxis"], {
+                                                dataKey: "name",
+                                                hide: true
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/PlanetSection.tsx",
+                                                lineNumber: 708,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$YAxis$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["YAxis"], {
+                                                hide: true,
+                                                domain: [
+                                                    0,
+                                                    128
+                                                ]
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/PlanetSection.tsx",
+                                                lineNumber: 709,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/PlanetSection.tsx",
+                                        lineNumber: 706,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/components/PlanetSection.tsx",
+                                    lineNumber: 705,
+                                    columnNumber: 13
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/PlanetSection.tsx",
+                                lineNumber: 704,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(StaggeredBox, {
                                 className: "p-4 w-64",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
@@ -1514,7 +1519,7 @@ function App() {
                                         children: "DATA TRANSFER LOG"
                                     }, void 0, false, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 705,
+                                        lineNumber: 715,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -1522,7 +1527,7 @@ function App() {
                                         children: "Last Sync: 21:05:44. Packet Loss: 0.1%"
                                     }, void 0, false, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 706,
+                                        lineNumber: 716,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1532,32 +1537,32 @@ function App() {
                                                 children: "Bandwidth"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 708,
+                                                lineNumber: 718,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                                 children: "1.2 Tb/s"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 709,
+                                                lineNumber: 719,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 707,
+                                        lineNumber: 717,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 704,
+                                lineNumber: 714,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/PlanetSection.tsx",
-                        lineNumber: 662,
+                        lineNumber: 672,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$framer$2d$motion__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].div, {
@@ -1574,12 +1579,12 @@ function App() {
                                 className: "w-64 h-64",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(TypingConsoleContent, {}, void 0, false, {
                                     fileName: "[project]/components/PlanetSection.tsx",
-                                    lineNumber: 716,
+                                    lineNumber: 726,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 715,
+                                lineNumber: 725,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(StaggeredBox, {
@@ -1590,7 +1595,7 @@ function App() {
                                         children: "WEATHER OVERVIEW"
                                     }, void 0, false, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 720,
+                                        lineNumber: 730,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -1598,7 +1603,7 @@ function App() {
                                         children: "Atmospheric readings: stable"
                                     }, void 0, false, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 721,
+                                        lineNumber: 731,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1608,26 +1613,26 @@ function App() {
                                                 children: "Pressure"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 723,
+                                                lineNumber: 733,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                                 children: "1012 hPa"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 724,
+                                                lineNumber: 734,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 722,
+                                        lineNumber: 732,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 719,
+                                lineNumber: 729,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(StaggeredBox, {
@@ -1638,7 +1643,7 @@ function App() {
                                         children: "RESOURCE ALLOCATION"
                                     }, void 0, false, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 729,
+                                        lineNumber: 739,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -1650,14 +1655,14 @@ function App() {
                                                 children: "OPTIMAL"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 730,
+                                                lineNumber: 740,
                                                 columnNumber: 69
                                             }, this),
                                             ". Reserve: 40%"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 730,
+                                        lineNumber: 740,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1667,26 +1672,26 @@ function App() {
                                                 children: "Energy Core"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 732,
+                                                lineNumber: 742,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                                 children: "99%"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 733,
+                                                lineNumber: 743,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 731,
+                                        lineNumber: 741,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 728,
+                                lineNumber: 738,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(StaggeredBox, {
@@ -1703,7 +1708,7 @@ function App() {
                                                 isAnimationActive: false
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 740,
+                                                lineNumber: 750,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$XAxis$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["XAxis"], {
@@ -1711,7 +1716,7 @@ function App() {
                                                 hide: true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 741,
+                                                lineNumber: 751,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$YAxis$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["YAxis"], {
@@ -1722,23 +1727,23 @@ function App() {
                                                 ]
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 742,
+                                                lineNumber: 752,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 739,
+                                        lineNumber: 749,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/PlanetSection.tsx",
-                                    lineNumber: 738,
+                                    lineNumber: 748,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 737,
+                                lineNumber: 747,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(StaggeredBox, {
@@ -1749,7 +1754,7 @@ function App() {
                                         children: "GEO-TELEMETRY"
                                     }, void 0, false, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 748,
+                                        lineNumber: 758,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -1757,7 +1762,7 @@ function App() {
                                         children: "Lattice Integrity: 99.9%. Tilt: 0.001°"
                                     }, void 0, false, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 749,
+                                        lineNumber: 759,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1767,38 +1772,38 @@ function App() {
                                                 children: "Target Lock"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 751,
+                                                lineNumber: 761,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                                 children: "Active"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/PlanetSection.tsx",
-                                                lineNumber: 752,
+                                                lineNumber: 762,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/PlanetSection.tsx",
-                                        lineNumber: 750,
+                                        lineNumber: 760,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 747,
+                                lineNumber: 757,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/PlanetSection.tsx",
-                        lineNumber: 714,
+                        lineNumber: 724,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 661,
+                lineNumber: 671,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(Ticker, {
@@ -1811,7 +1816,7 @@ function App() {
                 }
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 758,
+                lineNumber: 768,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$framer$2d$motion__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].div, {
@@ -1833,7 +1838,7 @@ function App() {
                                 children: "1D"
                             }, void 0, false, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 762,
+                                lineNumber: 772,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$framer$2d$motion__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].button, {
@@ -1844,7 +1849,7 @@ function App() {
                                 children: "S/N"
                             }, void 0, false, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 763,
+                                lineNumber: 773,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$framer$2d$motion__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].button, {
@@ -1855,13 +1860,13 @@ function App() {
                                 children: "S/A"
                             }, void 0, false, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 764,
+                                lineNumber: 774,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/PlanetSection.tsx",
-                        lineNumber: 761,
+                        lineNumber: 771,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
@@ -1875,7 +1880,7 @@ function App() {
                                 children: "Views"
                             }, void 0, false, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 767,
+                                lineNumber: 777,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$framer$2d$motion__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].button, {
@@ -1886,7 +1891,7 @@ function App() {
                                 children: "Recalculate"
                             }, void 0, false, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 768,
+                                lineNumber: 778,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$framer$2d$motion__$5b$external$5d$__$28$framer$2d$motion$2c$__esm_import$29$__["motion"].button, {
@@ -1897,19 +1902,19 @@ function App() {
                                 children: "N/Waves"
                             }, void 0, false, {
                                 fileName: "[project]/components/PlanetSection.tsx",
-                                lineNumber: 769,
+                                lineNumber: 779,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/PlanetSection.tsx",
-                        lineNumber: 766,
+                        lineNumber: 776,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 760,
+                lineNumber: 770,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("audio", {
@@ -1921,7 +1926,7 @@ function App() {
                 }
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 774,
+                lineNumber: 784,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("style", {
@@ -1942,13 +1947,13 @@ function App() {
         `
             }, void 0, false, {
                 fileName: "[project]/components/PlanetSection.tsx",
-                lineNumber: 776,
+                lineNumber: 786,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/PlanetSection.tsx",
-        lineNumber: 633,
+        lineNumber: 643,
         columnNumber: 5
     }, this);
 }

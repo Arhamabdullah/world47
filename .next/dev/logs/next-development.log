@@ -1,24 +1,26 @@
-[00:00:02.435] Server  LOG      ✓ Ready in 1634ms
-[00:00:02.845] Server  WARN     ⚠ Cross origin request detected from 192.168.100.59 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:00:06.035] Server  LOG      ○ Compiling / ...
-[00:00:23.327] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:00:23.327] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:00:23.327] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:00:23.327] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:00:23.327] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:00:23.327] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:00:23.327] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:00:23.327] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:00:23.327] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:01:46.516] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:01:46.516] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:01:46.516] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:01:46.516] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:01:46.516] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:01:46.516] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:01:46.516] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:01:46.516] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:01:46.516] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
-[00:04:04.162] Server  LOG      ✓ Compiled in 165ms
-[00:04:19.748] Server  LOG      ✓ Compiled in 273ms
+[00:00:01.484] Server  LOG      ✓ Ready in 947ms
+[00:00:06.890] Server  LOG      ○ Compiling / ...
+[00:00:11.557] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
+[00:00:11.557] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
+[00:00:11.557] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
+[00:00:11.557] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
+[00:00:11.557] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
+[00:00:11.557] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
+[00:00:11.557] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
+[00:00:11.557] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
+[00:00:11.557] Browser WARN    You are trying to animate backgroundColor from "rgba(0, 0, 0, 0)" to "transparent". rgba(0, 0, 0, 0) is not an animatable value - to enable this animation set rgba(0, 0, 0, 0) to a value animatable to transparent via the `style` property.
+[00:00:12.608] Browser WARN    Playback failed: {}
+[00:00:21.504] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:00:21.505] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:00:21.505] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:00:22.485] Browser WARN    You are trying to animate backgroundColor from "transparent" to "rgba(175, 238, 238, 0.1)". transparent is not an animatable value - to enable this animation set transparent to a value animatable to rgba(175, 238, 238, 0.1) via the `style` property.
+[00:00:23.393] Browser WARN    You are trying to animate backgroundColor from "rgba(175, 238, 238, 0.1)" to "transparent". rgba(175, 238, 238, 0.1) is not an animatable value - to enable this animation set rgba(175, 238, 238, 0.1) to a value animatable to transparent via the `style` property.

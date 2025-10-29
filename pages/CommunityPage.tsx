@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Users, Hash, Mail, Zap, X, ArrowLeft, TrendingUp, LucideIcon, MessageSquare, Clock } from "lucide-react";
 
  // 1. CORRECT IMPORT PATH for the Header
- import Header from "/components/Header";
+ import Header from "../components/Header";
 
 /* ------------------------------
     Types & Interfaces

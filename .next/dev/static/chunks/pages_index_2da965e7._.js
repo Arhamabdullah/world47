@@ -10,13 +10,12 @@
   "static/chunks/node_modules_react_e3593a73._.js",
   "static/chunks/node_modules_react-dom_cjs_react-dom_development_2b5e0eb3.js",
   "static/chunks/node_modules_react-dom_8a8085df._.js",
-  "static/chunks/node_modules_motion-dom_dist_es_01ad550f._.js",
-  "static/chunks/node_modules_framer-motion_dist_es_fab66f54._.js",
+  "static/chunks/node_modules_framer-motion_dist_es_72a59d34._.js",
   "static/chunks/node_modules_three_build_three_module_9e618f6d.js",
   "static/chunks/node_modules_react-reconciler_eb89a692._.js",
-  "static/chunks/node_modules_@react-three_fiber_dist_f26a1a2a._.js",
+  "static/chunks/node_modules_@react-three_fiber_dist_a9a43180._.js",
   "static/chunks/node_modules_recharts_es6_3d8f9874._.js",
-  "static/chunks/node_modules_d9e9e0c3._.js"
+  "static/chunks/node_modules_64f7e71e._.js"
 ],
     source: "entry"
 });

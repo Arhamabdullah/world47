@@ -5,7 +5,7 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { DollarSign, User, Send, QrCode, TrendingUp, RefreshCw, ChevronRight, BarChart3, Camera, UploadCloud } from "lucide-react";
-import Header from "/components/Header";
+import Header from "../components/Header";
 /* ------------------------------
     Types & Interfaces
     ------------------------------ */
