@@ -932,12 +932,15 @@ _c = StaggeredBox;
     };
     for(let attempt = 0; attempt < maxRetries; attempt++){
         try {
-            const response = await fetch(`${API_CONFIG.apiUrl}?key=${API_CONFIG.apiKey}`, {
-                method: 'POST',
+            const response = await fetch("/api/gemini", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json'
+                    "Content-Type": "application/json"
                 },
-                body: JSON.stringify(payload)
+                body: JSON.stringify({
+                    query,
+                    systemInstruction
+                })
             });
             if (!response.ok) {
                 // Log non-200 status errors
@@ -1108,7 +1111,7 @@ _c = StaggeredBox;
                         children: message.text
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 257,
+                        lineNumber: 258,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     message.sources && message.sources.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1119,7 +1122,7 @@ _c = StaggeredBox;
                                 children: "Sources (Grounding):"
                             }, void 0, false, {
                                 fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 260,
+                                lineNumber: 261,
                                 columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1132,7 +1135,7 @@ _c = StaggeredBox;
                                                 className: "mr-1 flex-shrink-0"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/HelpPage.tsx",
-                                                lineNumber: 264,
+                                                lineNumber: 265,
                                                 columnNumber: 41
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1144,35 +1147,35 @@ _c = StaggeredBox;
                                                 children: source.title || source.uri
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/HelpPage.tsx",
-                                                lineNumber: 265,
+                                                lineNumber: 266,
                                                 columnNumber: 41
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, index, true, {
                                         fileName: "[project]/pages/HelpPage.tsx",
-                                        lineNumber: 263,
+                                        lineNumber: 264,
                                         columnNumber: 37
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 261,
+                                lineNumber: 262,
                                 columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 259,
+                        lineNumber: 260,
                         columnNumber: 25
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 256,
+                lineNumber: 257,
                 columnNumber: 17
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/pages/HelpPage.tsx",
-            lineNumber: 250,
+            lineNumber: 251,
             columnNumber: 13
         }, ("TURBOPACK compile-time value", void 0));
     };
@@ -1187,7 +1190,7 @@ _c = StaggeredBox;
                         className: "text-[#66fff0]"
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 281,
+                        lineNumber: 282,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1195,13 +1198,13 @@ _c = StaggeredBox;
                         children: "LIVE SUPPORT AI CHAT"
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 282,
+                        lineNumber: 283,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 280,
+                lineNumber: 281,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1220,7 +1223,7 @@ _c = StaggeredBox;
                             message: msg
                         }, msg.id, false, {
                             fileName: "[project]/pages/HelpPage.tsx",
-                            lineNumber: 295,
+                            lineNumber: 296,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))),
                     isLoading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1233,7 +1236,7 @@ _c = StaggeredBox;
                                     className: "animate-spin text-[#66fff0]"
                                 }, void 0, false, {
                                     fileName: "[project]/pages/HelpPage.tsx",
-                                    lineNumber: 301,
+                                    lineNumber: 302,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1241,31 +1244,31 @@ _c = StaggeredBox;
                                     children: "AI is composing response..."
                                 }, void 0, false, {
                                     fileName: "[project]/pages/HelpPage.tsx",
-                                    lineNumber: 302,
+                                    lineNumber: 303,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/pages/HelpPage.tsx",
-                            lineNumber: 300,
+                            lineNumber: 301,
                             columnNumber: 25
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 299,
+                        lineNumber: 300,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         ref: chatEndRef
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 307,
+                        lineNumber: 308,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 288,
+                lineNumber: 289,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1281,7 +1284,7 @@ _c = StaggeredBox;
                         disabled: isLoading
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 312,
+                        lineNumber: 313,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].button, {
@@ -1295,24 +1298,24 @@ _c = StaggeredBox;
                             size: 20
                         }, void 0, false, {
                             fileName: "[project]/pages/HelpPage.tsx",
-                            lineNumber: 326,
+                            lineNumber: 327,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 320,
+                        lineNumber: 321,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 311,
+                lineNumber: 312,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/pages/HelpPage.tsx",
-        lineNumber: 279,
+        lineNumber: 280,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -1335,7 +1338,7 @@ const FAQSection = ()=>{
                         className: "text-yellow-400"
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 343,
+                        lineNumber: 344,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1343,13 +1346,13 @@ const FAQSection = ()=>{
                         children: "FREQUENTLY ASKED QUESTIONS"
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 344,
+                        lineNumber: 345,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 342,
+                lineNumber: 343,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1366,7 +1369,7 @@ const FAQSection = ()=>{
                                         children: faq.q
                                     }, void 0, false, {
                                         fileName: "[project]/pages/HelpPage.tsx",
-                                        lineNumber: 356,
+                                        lineNumber: 357,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].span, {
@@ -1382,18 +1385,18 @@ const FAQSection = ()=>{
                                             className: "text-cyan-400"
                                         }, void 0, false, {
                                             fileName: "[project]/pages/HelpPage.tsx",
-                                            lineNumber: 362,
+                                            lineNumber: 363,
                                             columnNumber: 33
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/pages/HelpPage.tsx",
-                                        lineNumber: 357,
+                                        lineNumber: 358,
                                         columnNumber: 29
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 352,
+                                lineNumber: 353,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1413,29 +1416,29 @@ const FAQSection = ()=>{
                                     children: faq.a
                                 }, void 0, false, {
                                     fileName: "[project]/pages/HelpPage.tsx",
-                                    lineNumber: 372,
+                                    lineNumber: 373,
                                     columnNumber: 29
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 366,
+                                lineNumber: 367,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, index, true, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 351,
+                        lineNumber: 352,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 349,
+                lineNumber: 350,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/pages/HelpPage.tsx",
-        lineNumber: 341,
+        lineNumber: 342,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -1453,7 +1456,7 @@ const ContactSection = ()=>{
                         className: "text-red-400"
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 387,
+                        lineNumber: 388,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1461,13 +1464,13 @@ const ContactSection = ()=>{
                         children: "DIRECT CONTACT"
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 388,
+                        lineNumber: 389,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 386,
+                lineNumber: 387,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1478,7 +1481,7 @@ const ContactSection = ()=>{
                         children: "For detailed account inquiries, bug reports, or partnership opportunities, contact the World47 Administration Core directly."
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 394,
+                        lineNumber: 395,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1489,7 +1492,7 @@ const ContactSection = ()=>{
                                 className: "text-red-400 mr-3 flex-shrink-0"
                             }, void 0, false, {
                                 fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 398,
+                                lineNumber: 399,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1501,19 +1504,19 @@ const ContactSection = ()=>{
                                 children: "info@world47.com"
                             }, void 0, false, {
                                 fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 399,
+                                lineNumber: 400,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 397,
+                        lineNumber: 398,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 393,
+                lineNumber: 394,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1524,7 +1527,7 @@ const ContactSection = ()=>{
                         className: "text-green-400"
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 407,
+                        lineNumber: 408,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1532,13 +1535,13 @@ const ContactSection = ()=>{
                         children: "COMMUNITY SUPPORT"
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 408,
+                        lineNumber: 409,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 406,
+                lineNumber: 407,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1549,7 +1552,7 @@ const ContactSection = ()=>{
                         children: "Engage with the World47 community, find solutions, and share your experiences in the official communication threads."
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 414,
+                        lineNumber: 415,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].button, {
@@ -1562,26 +1565,26 @@ const ContactSection = ()=>{
                                 size: 18
                             }, void 0, false, {
                                 fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 421,
+                                lineNumber: 422,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             " ACCESS COMMUNITY THREADS (Simulated Link)"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 417,
+                        lineNumber: 418,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 413,
+                lineNumber: 414,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/pages/HelpPage.tsx",
-        lineNumber: 385,
+        lineNumber: 386,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -1610,7 +1613,7 @@ _c3 = ContactSection;
                 className: "absolute inset-0 bg-[radial-gradient(circle_at_center,_#0a599e_0%,_#0a1631_40%,_#211c39_100%)]"
             }, void 0, false, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 444,
+                lineNumber: 445,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1622,7 +1625,7 @@ _c3 = ContactSection;
                 }
             }, void 0, false, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 447,
+                lineNumber: 448,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].header, {
@@ -1636,12 +1639,12 @@ _c3 = ContactSection;
                     pageTitle: pageTitle
                 }, void 0, false, {
                     fileName: "[project]/pages/HelpPage.tsx",
-                    lineNumber: 455,
+                    lineNumber: 456,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 450,
+                lineNumber: 451,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1665,12 +1668,12 @@ _c3 = ContactSection;
                         className: "col-span-1 md:col-span-2",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(AIChatBot, {}, void 0, false, {
                             fileName: "[project]/pages/HelpPage.tsx",
-                            lineNumber: 470,
+                            lineNumber: 471,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 469,
+                        lineNumber: 470,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1680,36 +1683,36 @@ _c3 = ContactSection;
                                 className: "h-1/2 min-h-[300px]",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FAQSection, {}, void 0, false, {
                                     fileName: "[project]/pages/HelpPage.tsx",
-                                    lineNumber: 476,
+                                    lineNumber: 477,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 475,
+                                lineNumber: 476,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "h-1/2",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ContactSection, {}, void 0, false, {
                                     fileName: "[project]/pages/HelpPage.tsx",
-                                    lineNumber: 479,
+                                    lineNumber: 480,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 478,
+                                lineNumber: 479,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 474,
+                        lineNumber: 475,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 459,
+                lineNumber: 460,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -1736,13 +1739,13 @@ _c3 = ContactSection;
             `
             }, void 0, false, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 485,
+                lineNumber: 486,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/pages/HelpPage.tsx",
-        lineNumber: 442,
+        lineNumber: 443,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };

@@ -1,15 +1,6 @@
 self.__BUILD_MANIFEST = {
-  "/CommunityPage": [
-    "static/chunks/pages/CommunityPage.js"
-  ],
   "/HelpPage": [
     "static/chunks/pages/HelpPage.js"
-  ],
-  "/RewardsPage": [
-    "static/chunks/pages/RewardsPage.js"
-  ],
-  "/StorePage": [
-    "static/chunks/pages/StorePage.js"
   ],
   "__rewrites": {
     "afterFiles": [],
@@ -25,6 +16,7 @@ self.__BUILD_MANIFEST = {
     "/StorePage",
     "/_app",
     "/_error",
+    "/api/gemini",
     "/loginpage",
     "/signuppage",
     "/world47"

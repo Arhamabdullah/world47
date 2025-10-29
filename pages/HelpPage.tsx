@@ -111,11 +111,12 @@ const makeApiCall = async (query: string, systemInstruction: string, maxRetries 
 
     for (let attempt = 0; attempt < maxRetries; attempt++) {
         try {
-            const response = await fetch(`${API_CONFIG.apiUrl}?key=${API_CONFIG.apiKey}`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
+            const response = await fetch("/api/gemini", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ query, systemInstruction }),
+});
+
 
             if (!response.ok) {
                 // Log non-200 status errors

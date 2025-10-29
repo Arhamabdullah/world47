@@ -1,8 +1,6 @@
 {
-  "/CommunityPage": "pages/CommunityPage.js",
   "/HelpPage": "pages/HelpPage.js",
-  "/RewardsPage": "pages/RewardsPage.js",
-  "/StorePage": "pages/StorePage.js",
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js"
+  "/_document": "pages/_document.js",
+  "/api/gemini": "pages/api/gemini.js"
 }
