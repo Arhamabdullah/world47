@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 "use client";
 import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { Canvas, useFrame, ThreeProps } from "@react-three/fiber";

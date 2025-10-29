@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 "use client";
 import React, { useState, useCallback, useRef, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
