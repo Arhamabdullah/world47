@@ -6,7 +6,7 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from "react"
 import { motion } from "framer-motion";
 import * as THREE from "three";
 import { Image, Aperture, Blocks, LucideIcon, Maximize } from "lucide-react";
-import Header from "../components/Header"; // ✅ Corrected Import Location
+import Header from "../components/header"; // ✅ Corrected Import Location
 
 /* ----------------------------------
     1. Types & Interfaces
