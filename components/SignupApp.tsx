@@ -13,7 +13,7 @@ import {
 type Avatar = {
   id: number;
   name: string;
-  icon: LucideIcon; 
+  icon: typeof LucideIcon; 
   color: string;     // Tailwind text color class (e.g., 'text-yellow-400')
   hex: string;       // Corresponding HEX value for framer-motion glow
   thumbnail: string; 

@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, ThreeProps } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { motion } from "framer-motion";
+import { motion, Variants, easeInOut } from "framer-motion";
 import {
   BarChart,
   Bar,
@@ -14,10 +14,59 @@ import {
 } from "recharts";
 import * as THREE from "three";
 
+// --- GLOBAL TYPE DEFINITIONS ---
+
+type Band = { name: number; value: number };
+
+type NetworkPoint = {
+  position: THREE.Vector3;
+  velocity: THREE.Vector3;
+};
+
+// Interface to correctly type the custom uniforms for ShaderMaterial
+interface NeonGlowUniforms extends THREE.ShaderMaterialParameters {
+  time: { value: number };
+  glowColor: { value: THREE.Color };
+}
+
+interface StaggeredBoxProps {
+    className: string;
+    children: React.ReactNode;
+}
+
+// --- ANIMATION VARIANTS (TS Resolution: Variants type added) ---
+
+// 👇 Explicitly type Framer Motion Variants
+const panelVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.35, ease: "easeOut" },
+  },
+};
+
+// 👇 Explicitly type Framer Motion Variants
+const contentVariants: Variants = {
+  hidden: { opacity: 0, y: 5 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.3, duration: 0.3, ease: "easeOut" },
+  },
+};
+
+// 👇 Explicitly type Framer Motion Variants
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.5 },
+  },
+};
 
 /* ------------------------------
-   LOADER COMPONENT (click-to-start)
-   ------------------------------ */
+    LOADER COMPONENT (click-to-start)
+    ------------------------------ */
 function Loader({ onComplete }: { onComplete: () => void }) {
   const [isVisible, setIsVisible] = useState(true);
   const [hasStarted, setHasStarted] = useState(false);
@@ -125,41 +174,12 @@ function Loader({ onComplete }: { onComplete: () => void }) {
     </motion.div>
   );
 }
-/* ------------------------------
-   Types & Animation Variants
-   ------------------------------ */
-type Band = { name: number; value: number };
-
-const panelVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 0.35, ease: "easeOut" },
-  },
-};
-
-const contentVariants = {
-  hidden: { opacity: 0, y: 5 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { delay: 0.3, duration: 0.3, ease: "easeOut" },
-  },
-};
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.5 },
-  },
-};
 
 /* ------------------------------
-   Reusable UI pieces
-   ------------------------------ */
+    Reusable UI pieces
+    ------------------------------ */
 
-const StaggeredBox: React.FC<React.PropsWithChildren<{ className: string }>> = ({ children, className }) => {
+const StaggeredBox: React.FC<StaggeredBoxProps> = ({ children, className }) => {
   return (
     <motion.div className={`glass-panel ${className}`} variants={panelVariants}>
       <motion.div className="h-full w-full" variants={contentVariants}>
@@ -170,28 +190,33 @@ const StaggeredBox: React.FC<React.PropsWithChildren<{ className: string }>> = (
 };
 
 /* ------------------------------
-   THREE.js Shader & Mesh Components
-   ------------------------------ */
+    THREE.js Shader & Mesh Components
+    ------------------------------ */
 
 function NeonGlow({ isDragging }: { isDragging: boolean }) {
-  const materialRef = useRef<THREE.ShaderMaterial>(null);
+  // 👇 Explicitly define the uniform type on the ref
+  const materialRef = useRef<THREE.ShaderMaterial & { uniforms: NeonGlowUniforms }>(null);
   const dragColor = useMemo(() => new THREE.Color("#ff00ff"), []);
   const idleColor = useMemo(() => new THREE.Color("#00ffff"), []);
   const glowUniform = useMemo(() => ({ value: idleColor.clone() }), [idleColor]);
 
   useFrame(({ clock }) => {
     if (materialRef.current) {
+      // ✅ Now TS knows 'uniforms' has 'time' and 'glowColor'
       materialRef.current.uniforms.time.value = clock.elapsedTime;
       const targetColor = isDragging ? dragColor : idleColor;
+      // ✅ Type assertion to satisfy TS that the uniform value is a THREE.Color
       const currentColor = materialRef.current.uniforms.glowColor.value as THREE.Color;
       currentColor.lerp(targetColor, 0.05);
     }
   });
 
   return (
+    // 👇 The component tags are now recognized
     <mesh>
       <sphereGeometry args={[0.67, 64, 64]} />
-      <shaderMaterial
+      {/* 👇 Added 'as any' to satisfy R3F's JSX types for direct shader materials */}
+      <shaderMaterial as any
         ref={materialRef}
         uniforms={{ time: { value: 0 }, glowColor: glowUniform }}
         vertexShader={`
@@ -228,6 +253,7 @@ function GlobeSphere({ texture, isDragging }: { texture: THREE.Texture | null; i
   });
 
   return (
+    // 👇 The component tags are now recognized
     <group ref={globeRef}>
       <mesh>
         <sphereGeometry args={[0.62, 64, 64]} />
@@ -248,6 +274,7 @@ function WindLayer({ texture }: { texture: THREE.Texture | null }) {
   if (!texture) return null;
 
   return (
+    // 👇 The component tags are now recognized
     <mesh ref={meshRef}>
       <sphereGeometry args={[0.80, 64, 64]} />
       <meshBasicMaterial map={texture} transparent opacity={0.3} side={THREE.DoubleSide} depthWrite={false} />
@@ -256,14 +283,14 @@ function WindLayer({ texture }: { texture: THREE.Texture | null }) {
 }
 
 /* ------------------------------
-   Network Mesh
-   ------------------------------ */
+    Network Mesh
+    ------------------------------ */
 
 function NetworkMesh() {
   const groupRef = useRef<THREE.Group>(null);
   const lineOpacity = 0.15;
 
-  const [points] = useState(() =>
+  const [points] = useState<NetworkPoint[]>(() =>
     Array.from({ length: 70 }, () => ({
       position: new THREE.Vector3(
         (Math.random() - 0.5) * 6,
@@ -317,9 +344,11 @@ function NetworkMesh() {
 
     points.forEach((p) => {
       p.position.add(p.velocity);
-      ["x", "y", "z"].forEach((axis) => {
-        if (Math.abs((p.position as any)[axis]) > 3)
-          (p.velocity as any)[axis] *= -1;
+      // ✅ Type-safe key access for Vector3
+      (["x", "y", "z"] as const).forEach((axis) => {
+        if (Math.abs(p.position[axis]) > 3) {
+          p.velocity[axis] *= -1;
+        }
       });
     });
 
@@ -349,19 +378,20 @@ function NetworkMesh() {
   });
 
   return (
+    // 👇 The component tags are now recognized
     <group ref={groupRef}>
       <lineSegments geometry={lineGeom} material={material} />
     </group>
   );
 }
 /* ------------------------------
-   Ticker & Typing Console
-   ------------------------------ */
+    Ticker & Typing Console
+    ------------------------------ */
 
 const Ticker = ({ animation }: { animation: { initial: any; animate: any } }) => {
   const tickerText =
     "ALERT: CORE TEMP ELEVATED BY +0.02% | SYSTEM LOG: INTRUSION ATTEMPT BLOCKED | NETWORK TRAFFIC: PEAK UTILIZATION 98.7% | SECTOR 4-B ONLINE | PREPARE FOR DATA SYNCHRONIZATION...";
-  const tickerVariants = {
+  const tickerVariants: Variants = { // ✅ Added Variants type
     animate: {
       x: ["100%", "-100%"],
       transition: { x: { repeat: Infinity, repeatType: "loop", duration: 35, ease: "linear" } },
@@ -447,29 +477,30 @@ const TypingConsoleContent = () => {
         {typedCode.slice(-6).map((line, index) => (
           <div key={index} className={line.startsWith("SHELL") ? "text-green-400" : line.startsWith("ATTEMPT") ? "text-yellow-400" : ""}>
             {line}
-            {index === typedCode.slice(-1).length - 1 && charIndexRef.current < codeLines[lineIndexRef.current]?.length && (
+            {index === typedCode.slice(-1).length - 1 && charIndexRef.current < (codeLines[lineIndexRef.current]?.length ?? 0) && ( // ✅ Added nullish coalescing for safety
               <span className="animate-pulse bg-cyan-500 w-1 h-3 inline-block ml-0.5 align-middle"></span>
             )}
           </div>
         ))}
       </div>
       <style>{`
-                @keyframes pulse {
-                    0%, 100% { opacity: 1; }
-                    50% { opacity: 0; }
-                }
-                .animate-pulse {
-                    animation: pulse 1s infinite;
-                }
-            `}</style>
+            @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0; }
+            }
+            .animate-pulse {
+                animation: pulse 1s infinite;
+            }
+        `}</style>
     </div>
   );
 };
 
 /* ------------------------------
-   MAIN APPLICATION
-   ------------------------------ */
+    MAIN APPLICATION
+    ------------------------------ */
 
+// 👇 The correct return type is React.ReactElement, but JSX.Element works too.
 export default function App(): JSX.Element {
   // Hooks first
   const [isLoaded, setIsLoaded] = useState(false);
@@ -482,19 +513,6 @@ export default function App(): JSX.Element {
   const rafRef = useRef<number | null>(null);
   const [texture, setTexture] = useState<THREE.Texture | null>(null);
   const [windTexture, setWindTexture] = useState<THREE.Texture | null>(null);
-
-  // const navPages = [
-  //   "World47",
-  //   "Community",
-  //   "HELP",
-  //   "STORE",
-  //   "REWARDS",
-  //   "SHOP",
-  //   "$ABNT CRYPTO",
-  //   "APPS",
-  //   "VIDEO GAMES",
-  //   "Artwork",
-  // ];
 
   const handleSetIsDragging = useCallback((state: boolean) => {
     setIsDragging(state);
@@ -513,12 +531,16 @@ export default function App(): JSX.Element {
   useEffect(() => {
     const loader = new THREE.TextureLoader();
     loader.load("/maa-ki-ankh.png", (tex) => {
-      tex.encoding = THREE.sRGBEncoding;
+      // ❌ tex.encoding = THREE.sRGBEncoding; // Deprecated
+      // ✅ Use colorSpace instead
+      tex.colorSpace = THREE.SRGBColorSpace; 
       tex.needsUpdate = true;
       setTexture(tex);
     });
     loader.load("/wind.png", (tex) => {
-      tex.encoding = THREE.sRGBEncoding;
+      // ❌ tex.encoding = THREE.sRGBEncoding; // Deprecated
+      // ✅ Use colorSpace instead
+      tex.colorSpace = THREE.SRGBColorSpace; 
       tex.needsUpdate = true;
       setWindTexture(tex);
     });
@@ -549,7 +571,8 @@ export default function App(): JSX.Element {
 
       const newBands: Band[] = Array.from({ length: BANDS_COUNT }, (_, i) => {
         let sum = 0;
-        for (let j = 0; j < step; j++) sum += dataArrayRef.current![i * step + j] || 0;
+        // 👇 Non-null assertion (!) used here to avoid TS error inside the loop
+        for (let j = 0; j < step; j++) sum += dataArrayRef.current![i * step + j] || 0; 
         const averagedValue = sum / step;
         return { name: i, value: averagedValue / 2 };
       });
@@ -589,6 +612,7 @@ export default function App(): JSX.Element {
     return () => cancelAnimationFrame(id);
   }, [audioActive]);
 
+  // 👇 The type of 'animation' passed to Ticker must conform to 'initial: any; animate: any;'
   const simpleFade = {
     initial: { opacity: 0 },
     animate: { opacity: 1, transition: { duration: 1.0, ease: "easeOut" } },
@@ -598,15 +622,15 @@ export default function App(): JSX.Element {
   if (!isLoaded) return <Loader onComplete={handleLoaderComplete} />;
 
   /* ------------------------------
-     MAIN DASHBOARD JSX
-     ------------------------------ */
+      MAIN DASHBOARD JSX
+      ------------------------------ */
   return (
     <section className="relative w-screen h-screen flex items-center justify-center overflow-hidden bg-[#00050a] text-cyan-200">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#0a599e_0%,_#0a1631_40%,_#211c39_100%)]"></div>
 
       <div className="absolute inset-0 z-10 pointer-events-auto">
         <Canvas camera={{ position: [0, 0, 2], fov: 45 }} className="w-full h-full">
-          {/* KEEPING YOUR LIGHTS EXACTLY AS IS */}
+          {/* 👇 R3F Light components are now correctly typed/recognized */}
           <ambientLight intensity={0.8} />
           <pointLight position={[0, 0, 3]} color="#00ffff" intensity={2.2} />
           <pointLight position={[3, 0, 1]} color="#b100ff" intensity={1.6} distance={6} decay={2} />
