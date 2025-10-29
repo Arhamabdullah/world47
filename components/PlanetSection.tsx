@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
 
 "use client";
 import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { motion, Variants, easeInOut } from "framer-motion";
+const EASE_OUT: [number, number, number, number] = [0.33, 1, 0.68, 1];
+
 
 import {
   BarChart,
@@ -16,7 +16,7 @@ import {
   YAxis,
   ResponsiveContainer,
 } from "recharts";
-import * as THREE from "three";
+// import * as THREE from "three";
 
 // --- GLOBAL TYPE DEFINITIONS ---
 
@@ -45,7 +45,7 @@ const panelVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 0.35, ease: "easeOut" },
+    transition: { duration: 0.35, ease: EASE_OUT },
   },
 };
 
@@ -55,7 +55,9 @@ const contentVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { delay: 0.3, duration: 0.3, ease: "easeOut" },
+    transition: { delay: 0.3, duration: 0.3, ease: EASE_OUT
+
+ },
   },
 };
 
@@ -115,7 +117,9 @@ function Loader({ onComplete }: { onComplete: () => void }) {
   const loaderVariants = {
     visible: {
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.8, ease: EASE_OUT
+
+ },
     },
     hidden: {
       opacity: 0,
@@ -148,7 +152,8 @@ function Loader({ onComplete }: { onComplete: () => void }) {
           onClick={handleStart}
           initial={{ opacity: 0, scale: 0.88 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: EASE_OUT
+ }}
           className="relative z-50 px-10 py-4 text-xl font-semibold tracking-wider text-cyan-300 border border-cyan-500/40 rounded-l bg-black/40 backdrop-blur-lg hover:bg-cyan-500/20 hover:text-cyan-100 transition-all duration-300 pointer-events-auto"
         >
           CLICK TO ENTER{" "}
@@ -573,7 +578,9 @@ export default function App(): JSX.Element {
 
   const animateEqualizer = useCallback(() => {
     if (analyserRef.current && dataArrayRef.current) {
-      analyserRef.current.getByteFrequencyData(dataArrayRef.current);
+    analyserRef.current.getByteFrequencyData(dataArrayRef.current);
+
+
       const step = Math.floor(dataArrayRef.current.length / BANDS_COUNT);
 
       const newBands: Band[] = Array.from({ length: BANDS_COUNT }, (_, i) => {
@@ -622,7 +629,8 @@ export default function App(): JSX.Element {
   // 👇 The type of 'animation' passed to Ticker must conform to 'initial: any; animate: any;'
   const simpleFade = {
     initial: { opacity: 0 },
-    animate: { opacity: 1, transition: { duration: 1.0, ease: "easeOut" } },
+    animate: { opacity: 1, transition: { duration: 1.0, ease: EASE_OUT
+ } },
   };
 
   // Early return to show loader until complete (all hooks above)

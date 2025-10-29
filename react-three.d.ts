@@ -1,16 +1,19 @@
-import "@react-three/fiber";
+// src/types/react-three.d.ts
+import * as THREE from "three";
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
       mesh: any;
       group: any;
-      shaderMaterial: any;
+      primitive: any;
+      lineSegments: any;
       sphereGeometry: any;
       meshBasicMaterial: any;
-      lineSegments: any;
+      shaderMaterial: any;
       ambientLight: any;
       pointLight: any;
     }
   }
 }
+export {};
