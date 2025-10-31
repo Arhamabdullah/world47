@@ -1,48 +1,66 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_API_URL =
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
 
-  // Debug log to confirm the route is running
-  console.log("✅ /api/gemini route hit");
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== "POST")
+    return res.status(405).json({ error: "Method Not Allowed" });
+
+  if (!GEMINI_API_KEY)
+    return res.status(500).json({ error: "Missing GEMINI_API_KEY in env" });
 
   try {
     const { query, systemInstruction } = req.body;
+    if (!query) return res.status(400).json({ error: "Missing query" });
 
-    if (!query) {
-      console.log("❌ No query provided");
-      return res.status(400).json({ error: "Missing query text" });
+    const payload = {
+      contents: [
+        {
+          role: "user",
+          parts: [{ text: query }],
+        },
+      ],
+      system_instruction: {
+        role: "system",
+        parts: [{ text: systemInstruction || "" }],
+      },
+    };
+
+    const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const raw = await response.text();
+    if (!response.ok) {
+      console.error("Gemini API Error:", raw);
+      return res.status(response.status).json({ error: raw });
     }
 
-    // Ensure your Gemini API key is loaded correctly
-    const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-    if (!GEMINI_API_KEY) {
-      console.error("❌ GEMINI_API_KEY is not defined in .env.local");
-      return res.status(500).json({ error: "Server missing Gemini API key" });
+    let data: any = {};
+    try {
+      data = JSON.parse(raw);
+    } catch {
+      console.warn("⚠️ Gemini returned non-JSON response:", raw);
     }
 
-    // Make the API call to Gemini
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${GEMINI_API_KEY}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: query }] }],
-          tools: [{ google_search: {} }],
-          systemInstruction: { parts: [{ text: systemInstruction }] },
-        }),
-      }
-    );
+    // ✅ Parse out text or image
+    const candidate = data?.candidates?.[0];
+    const part = candidate?.content?.parts?.[0];
 
-    const data = await response.json();
-    console.log("✅ Gemini API response:", JSON.stringify(data, null, 2));
+    if (part?.inlineData?.data) {
+      // Image in base64
+      const imageUrl = `data:image/png;base64,${part.inlineData.data}`;
+      return res.status(200).json({ type: "image", imageUrl });
+    }
 
-    return res.status(200).json(data);
-  } catch (error: any) {
-    console.error("🔥 Gemini API error:", error.message || error);
-    return res.status(500).json({ error: error.message || "Internal Server Error" });
+    const text = part?.text || candidate?.content?.parts?.map((p: any) => p.text).join(" ") || "No response generated.";
+    return res.status(200).json({ type: "text", text });
+  } catch (err: any) {
+    console.error("❌ Gemini Handler Error:", err);
+    return res.status(500).json({ error: err.message || "Internal Server Error" });
   }
 }

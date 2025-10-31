@@ -8,8 +8,8 @@ __turbopack_load_page_chunks__("/CommunityPage", [
   "static/chunks/node_modules_react-dom_cjs_react-dom_development_2b5e0eb3.js",
   "static/chunks/node_modules_react-dom_8a8085df._.js",
   "static/chunks/node_modules_framer-motion_dist_es_72a59d34._.js",
-  "static/chunks/node_modules_dcb47826._.js",
+  "static/chunks/node_modules_4c9a3392._.js",
   "static/chunks/[root-of-the-server]__192df4b4._.js",
   "static/chunks/pages_CommunityPage_2da965e7._.js",
-  "static/chunks/turbopack-pages_CommunityPage_29de1ed8._.js"
+  "static/chunks/turbopack-pages_CommunityPage_e03e59e4._.js"
 ])

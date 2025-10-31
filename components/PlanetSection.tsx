@@ -1,11 +1,9 @@
-
 "use client";
 import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { motion, Variants, easeInOut } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 const EASE_OUT: [number, number, number, number] = [0.33, 1, 0.68, 1];
-
 
 import {
   BarChart,
@@ -16,9 +14,11 @@ import {
   YAxis,
   ResponsiveContainer,
 } from "recharts";
-// import * as THREE from "three";
+import * as THREE from "three";
 
-// --- GLOBAL TYPE DEFINITIONS ---
+/* ------------------------------
+    GLOBAL TYPE DEFINITIONS
+   ------------------------------ */
 
 type Band = { name: number; value: number };
 
@@ -27,20 +27,20 @@ type NetworkPoint = {
   velocity: THREE.Vector3;
 };
 
-// Interface to correctly type the custom uniforms for ShaderMaterial
 interface NeonGlowUniforms extends THREE.ShaderMaterialParameters {
   time: { value: number };
   glowColor: { value: THREE.Color };
 }
 
 interface StaggeredBoxProps {
-    className: string;
-    children: React.ReactNode;
+  className?: string;
+  children: React.ReactNode;
 }
 
-// --- ANIMATION VARIANTS (TS Resolution: Variants type added) ---
+/* ------------------------------
+    ANIMATION VARIANTS
+   ------------------------------ */
 
-// 👇 Explicitly type Framer Motion Variants
 const panelVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -49,19 +49,15 @@ const panelVariants: Variants = {
   },
 };
 
-// 👇 Explicitly type Framer Motion Variants
 const contentVariants: Variants = {
   hidden: { opacity: 0, y: 5 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { delay: 0.3, duration: 0.3, ease: EASE_OUT
-
- },
+    transition: { delay: 0.3, duration: 0.3, ease: EASE_OUT },
   },
 };
 
-// 👇 Explicitly type Framer Motion Variants
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -70,12 +66,10 @@ const containerVariants: Variants = {
   },
 };
 
-import * as THREE from "three"; // <-- ensure Header.tsx is placed here (adjust path if needed)
-
-
 /* ------------------------------
-    LOADER COMPONENT (click-to-start)
-    ------------------------------ */
+    LOADER (unchanged UI, mobile-safe)
+   ------------------------------ */
+
 function Loader({ onComplete }: { onComplete: () => void }) {
   const [isVisible, setIsVisible] = useState(true);
   const [hasStarted, setHasStarted] = useState(false);
@@ -93,7 +87,8 @@ function Loader({ onComplete }: { onComplete: () => void }) {
         await video.play();
       }
       if (audio) {
-        await audio.play();
+        // mobile friendly: try/catch
+        await audio.play().catch(() => {});
       }
     } catch (err) {
       console.warn("Playback failed:", err);
@@ -101,25 +96,18 @@ function Loader({ onComplete }: { onComplete: () => void }) {
   };
 
   const handleVideoEnd = () => {
-    // Start fade out
     setIsVisible(false);
-
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
     }
-
-    // Complete transition after fade duration
     setTimeout(onComplete, 800);
   };
 
-  // Adjusted variants for a dark fade
   const loaderVariants = {
     visible: {
       opacity: 1,
-      transition: { duration: 0.8, ease: EASE_OUT
-
- },
+      transition: { duration: 0.8, ease: EASE_OUT },
     },
     hidden: {
       opacity: 0,
@@ -134,34 +122,30 @@ function Loader({ onComplete }: { onComplete: () => void }) {
       initial="visible"
       animate={isVisible ? "visible" : "hidden"}
     >
-      {/* background video */}
       <video
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
         src="/web-loader.mp4"
         playsInline
+        muted
         onEnded={handleVideoEnd}
       />
 
-      {/* background audio */}
       <audio ref={audioRef} src="/loader-audio.mp3" preload="auto" />
 
-      {/* Click to enter button */}
       {!hasStarted && (
         <motion.button
           onClick={handleStart}
           initial={{ opacity: 0, scale: 0.88 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: EASE_OUT
- }}
-          className="relative z-50 px-10 py-4 text-xl font-semibold tracking-wider text-cyan-300 border border-cyan-500/40 rounded-l bg-black/40 backdrop-blur-lg hover:bg-cyan-500/20 hover:text-cyan-100 transition-all duration-300 pointer-events-auto"
+          transition={{ duration: 0.8, ease: EASE_OUT }}
+          className="relative z-50 px-8 py-3 text-lg md:text-xl font-semibold tracking-wider text-cyan-300 border border-cyan-500/40 rounded-l bg-black/40 backdrop-blur-lg hover:bg-cyan-500/20 hover:text-cyan-100 transition-all duration-300 pointer-events-auto"
         >
           CLICK TO ENTER{" "}
           <span className="text-cyan-400 font-bold">WORLD 47</span>
         </motion.button>
       )}
 
-      {/* Force a black overlay during fade out */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isVisible ? 0 : 1 }}
@@ -169,10 +153,10 @@ function Loader({ onComplete }: { onComplete: () => void }) {
         className="absolute inset-0 bg-black pointer-events-none"
       />
 
-      {/* Button glow effect */}
       <style jsx>{`
         @keyframes glow {
-          0%, 100% {
+          0%,
+          100% {
             text-shadow: 0 0 16px rgba(0, 255, 255, 0.35);
           }
           50% {
@@ -189,9 +173,9 @@ function Loader({ onComplete }: { onComplete: () => void }) {
 
 /* ------------------------------
     Reusable UI pieces
-    ------------------------------ */
+   ------------------------------ */
 
-const StaggeredBox: React.FC<StaggeredBoxProps> = ({ children, className }) => {
+const StaggeredBox: React.FC<StaggeredBoxProps> = ({ children, className = "" }) => {
   return (
     <motion.div className={`glass-panel ${className}`} variants={panelVariants}>
       <motion.div className="h-full w-full" variants={contentVariants}>
@@ -202,11 +186,10 @@ const StaggeredBox: React.FC<StaggeredBoxProps> = ({ children, className }) => {
 };
 
 /* ------------------------------
-    THREE.js Shader & Mesh Components
-    ------------------------------ */
+    THREE Components (kept intact with small mobile guards)
+   ------------------------------ */
 
 function NeonGlow({ isDragging }: { isDragging: boolean }) {
-  // 👇 Explicitly define the uniform type on the ref
   const materialRef = useRef<THREE.ShaderMaterial & { uniforms: NeonGlowUniforms }>(null);
   const dragColor = useMemo(() => new THREE.Color("#ff00ff"), []);
   const idleColor = useMemo(() => new THREE.Color("#00ffff"), []);
@@ -214,22 +197,18 @@ function NeonGlow({ isDragging }: { isDragging: boolean }) {
 
   useFrame(({ clock }) => {
     if (materialRef.current) {
-      // ✅ Now TS knows 'uniforms' has 'time' and 'glowColor'
       materialRef.current.uniforms.time.value = clock.elapsedTime;
       const targetColor = isDragging ? dragColor : idleColor;
-      // ✅ Type assertion to satisfy TS that the uniform value is a THREE.Color
       const currentColor = materialRef.current.uniforms.glowColor.value as THREE.Color;
       currentColor.lerp(targetColor, 0.05);
     }
   });
 
   return (
-    // 👇 The component tags are now recognized
     <mesh>
       <sphereGeometry args={[0.67, 64, 64]} />
-      {/* 👇 Added 'as any' to satisfy R3F's JSX types for direct shader materials */}
-      <shaderMaterial as any
-        ref={materialRef}
+      <shaderMaterial
+        ref={materialRef as any}
         uniforms={{ time: { value: 0 }, glowColor: glowUniform }}
         vertexShader={`
             varying vec3 vNormal;
@@ -265,11 +244,9 @@ function GlobeSphere({ texture, isDragging }: { texture: THREE.Texture | null; i
   });
 
   return (
-    // 👇 The component tags are now recognized
     <group ref={globeRef}>
       <mesh>
         <sphereGeometry args={[0.62, 64, 64]} />
-        {/* <<<<<< CHANGED HERE: use meshBasicMaterial to display true colors (ignores lights) >>>>>> */}
         <meshBasicMaterial map={texture || null} side={THREE.DoubleSide} toneMapped={false} />
       </mesh>
       <NeonGlow isDragging={isDragging} />
@@ -286,7 +263,6 @@ function WindLayer({ texture }: { texture: THREE.Texture | null }) {
   if (!texture) return null;
 
   return (
-    // 👇 The component tags are now recognized
     <mesh ref={meshRef}>
       <sphereGeometry args={[0.80, 64, 64]} />
       <meshBasicMaterial map={texture} transparent opacity={0.3} side={THREE.DoubleSide} depthWrite={false} />
@@ -296,25 +272,18 @@ function WindLayer({ texture }: { texture: THREE.Texture | null }) {
 
 /* ------------------------------
     Network Mesh
-    ------------------------------ */
+   ------------------------------ */
 
 function NetworkMesh() {
   const groupRef = useRef<THREE.Group>(null);
   const lineOpacity = 0.15;
 
-  const [points] = useState<NetworkPoint[]>(() =>
-    Array.from({ length: 70 }, () => ({
-      position: new THREE.Vector3(
-        (Math.random() - 0.5) * 6,
-        (Math.random() - 0.5) * 3,
-        (Math.random() - 0.5) * 2
-      ),
-      velocity: new THREE.Vector3(
-        (Math.random() - 0.5) * 0.002,
-        (Math.random() - 0.5) * 0.002,
-        (Math.random() - 0.5) * 0.002
-      ),
-    }))
+  const [points] = useState<NetworkPoint[]>(
+    () =>
+      Array.from({ length: 70 }, () => ({
+        position: new THREE.Vector3((Math.random() - 0.5) * 6, (Math.random() - 0.5) * 3, (Math.random() - 0.5) * 2),
+        velocity: new THREE.Vector3((Math.random() - 0.5) * 0.002, (Math.random() - 0.5) * 0.002, (Math.random() - 0.5) * 0.002),
+      }))
   );
 
   const lineGeom = useMemo(() => new THREE.BufferGeometry(), []);
@@ -356,7 +325,6 @@ function NetworkMesh() {
 
     points.forEach((p) => {
       p.position.add(p.velocity);
-      // ✅ Type-safe key access for Vector3
       (["x", "y", "z"] as const).forEach((axis) => {
         if (Math.abs(p.position[axis]) > 3) {
           p.velocity[axis] *= -1;
@@ -380,30 +348,27 @@ function NetworkMesh() {
       }
     }
 
-    lineGeom.setAttribute(
-      "position",
-      new THREE.Float32BufferAttribute(positions, 3)
-    );
+    lineGeom.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
     lineGeom.computeBoundingSphere();
 
     if (groupRef.current) groupRef.current.rotation.y += 0.0004;
   });
 
   return (
-    // 👇 The component tags are now recognized
     <group ref={groupRef}>
       <lineSegments geometry={lineGeom} material={material} />
     </group>
   );
 }
+
 /* ------------------------------
     Ticker & Typing Console
-    ------------------------------ */
+   ------------------------------ */
 
-const Ticker = ({ animation }: { animation: { initial: any; animate: any } }) => {
+const Ticker = ({ animation }: { animation?: { initial?: any; animate?: any } }) => {
   const tickerText =
     "ALERT: CORE TEMP ELEVATED BY +0.02% | SYSTEM LOG: INTRUSION ATTEMPT BLOCKED | NETWORK TRAFFIC: PEAK UTILIZATION 98.7% | SECTOR 4-B ONLINE | PREPARE FOR DATA SYNCHRONIZATION...";
-  const tickerVariants: Variants = { // ✅ Added Variants type
+  const tickerVariants: Variants = {
     animate: {
       x: ["100%", "-100%"],
       transition: { x: { repeat: Infinity, repeatType: "loop", duration: 35, ease: "linear" } },
@@ -411,7 +376,7 @@ const Ticker = ({ animation }: { animation: { initial: any; animate: any } }) =>
   };
 
   return (
-    <motion.div className="absolute bottom-16 left-0 right-0 z-40 h-8 overflow-hidden pointer-events-auto" {...animation}>
+    <motion.div className="w-full z-40 h-8 overflow-hidden pointer-events-auto" {...(animation || {})}>
       <div className="h-full w-full bg-[#00121a]/30 backdrop-blur-sm border-t border-b border-cyan-500/40 flex items-center">
         <motion.div className="whitespace-nowrap text-sm font-mono tracking-wider opacity-80" variants={tickerVariants} animate="animate">
           <span className="text-[#00ffff] font-bold mr-12">[TICKER]</span>
@@ -489,7 +454,7 @@ const TypingConsoleContent = () => {
         {typedCode.slice(-6).map((line, index) => (
           <div key={index} className={line.startsWith("SHELL") ? "text-green-400" : line.startsWith("ATTEMPT") ? "text-yellow-400" : ""}>
             {line}
-            {index === typedCode.slice(-1).length - 1 && charIndexRef.current < (codeLines[lineIndexRef.current]?.length ?? 0) && ( // ✅ Added nullish coalescing for safety
+            {index === typedCode.slice(-1).length - 1 && charIndexRef.current < (codeLines[lineIndexRef.current]?.length ?? 0) && (
               <span className="animate-pulse bg-cyan-500 w-1 h-3 inline-block ml-0.5 align-middle"></span>
             )}
           </div>
@@ -509,16 +474,14 @@ const TypingConsoleContent = () => {
 };
 
 /* ------------------------------
-    MAIN APPLICATION
-    ------------------------------ */
+    MAIN COMPONENT
+   ------------------------------ */
 
-// 👇 The correct return type is React.ReactElement, but JSX.Element works too.
 export default function App(): JSX.Element {
-  // Hooks first
   const [isLoaded, setIsLoaded] = useState(false);
   const [audioActive, setAudioActive] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null); // site background audio
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const audioCtxRef = useRef<AudioContext | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
   const dataArrayRef = useRef<Uint8Array | null>(null);
@@ -543,22 +506,18 @@ export default function App(): JSX.Element {
   useEffect(() => {
     const loader = new THREE.TextureLoader();
     loader.load("/maa-ki-ankh.png", (tex) => {
-      // ❌ tex.encoding = THREE.sRGBEncoding; // Deprecated
-      // ✅ Use colorSpace instead
-      tex.colorSpace = THREE.SRGBColorSpace; 
+      tex.colorSpace = (THREE as any).SRGBColorSpace ?? (tex as any).colorSpace ?? tex.encoding;
       tex.needsUpdate = true;
       setTexture(tex);
     });
     loader.load("/wind.png", (tex) => {
-      // ❌ tex.encoding = THREE.sRGBEncoding; // Deprecated
-      // ✅ Use colorSpace instead
-      tex.colorSpace = THREE.SRGBColorSpace; 
+      tex.colorSpace = (THREE as any).SRGBColorSpace ?? (tex as any).colorSpace ?? tex.encoding;
       tex.needsUpdate = true;
       setWindTexture(tex);
     });
   }, []);
 
-  // Audio / analyser setup for site audio
+  // Audio / analyser setup
   const setupAudio = () => {
     if (!audioRef.current) return;
     const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
@@ -578,15 +537,13 @@ export default function App(): JSX.Element {
 
   const animateEqualizer = useCallback(() => {
     if (analyserRef.current && dataArrayRef.current) {
-    analyserRef.current.getByteFrequencyData(dataArrayRef.current);
-
+      analyserRef.current.getByteFrequencyData(dataArrayRef.current);
 
       const step = Math.floor(dataArrayRef.current.length / BANDS_COUNT);
 
       const newBands: Band[] = Array.from({ length: BANDS_COUNT }, (_, i) => {
         let sum = 0;
-        // 👇 Non-null assertion (!) used here to avoid TS error inside the loop
-        for (let j = 0; j < step; j++) sum += dataArrayRef.current![i * step + j] || 0; 
+        for (let j = 0; j < step; j++) sum += dataArrayRef.current![i * step + j] || 0;
         const averagedValue = sum / step;
         return { name: i, value: averagedValue / 2 };
       });
@@ -626,26 +583,20 @@ export default function App(): JSX.Element {
     return () => cancelAnimationFrame(id);
   }, [audioActive]);
 
-  // 👇 The type of 'animation' passed to Ticker must conform to 'initial: any; animate: any;'
   const simpleFade = {
     initial: { opacity: 0 },
-    animate: { opacity: 1, transition: { duration: 1.0, ease: EASE_OUT
- } },
+    animate: { opacity: 1, transition: { duration: 1.0, ease: EASE_OUT } },
   };
 
-  // Early return to show loader until complete (all hooks above)
   if (!isLoaded) return <Loader onComplete={handleLoaderComplete} />;
 
-  /* ------------------------------
-      MAIN DASHBOARD JSX
-      ------------------------------ */
   return (
-    <section className="relative w-screen h-screen flex items-center justify-center overflow-hidden bg-[#00050a] text-cyan-200">
+    <section className="relative w-screen min-h-screen flex flex-col md:block overflow-hidden bg-[#00050a] text-cyan-200">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#0a599e_0%,_#0a1631_40%,_#211c39_100%)]"></div>
 
-      <div className="absolute inset-0 z-10 pointer-events-auto">
-        <Canvas camera={{ position: [0, 0, 2], fov: 45 }} className="w-full h-full">
-          {/* 👇 R3F Light components are now correctly typed/recognized */}
+      {/* Canvas container - mobile: not absolute and fixed mobile height so globe sits on top; desktop: absolute full-screen */}
+      <div className="w-full h-[42vh] sm:h-[56vh] md:absolute md:inset-0 md:h-full z-10 pointer-events-auto">
+        <Canvas camera={{ position: [0, 0, 2], fov: 45 }} className="w-full h-full" style={{ touchAction: "none" }}>
           <ambientLight intensity={0.8} />
           <pointLight position={[0, 0, 3]} color="#00ffff" intensity={2.2} />
           <pointLight position={[3, 0, 1]} color="#b100ff" intensity={1.6} distance={6} decay={2} />
@@ -665,122 +616,188 @@ export default function App(): JSX.Element {
         </Canvas>
       </div>
 
-      {/* Insert external Header component here (header removed from this file) */}
-      {/* <Header navPages={navPages} audioActive={audioActive} handleToggle={handleToggle} /> */}
+      {/* Panels container:
+          - For mobile: show a compact 2-column grid of boxes (equal width)
+          - For desktop: original overlayed two-column layout
+      */}
+      <div className="w-full md:absolute md:inset-0 px-4 md:px-8 z-40 pointer-events-none mt-[10vh] md:mt-0">
+        {/* MOBILE GRID (visible on small screens only) */}
+        <div className="grid grid-cols-2 gap-2 md:hidden w-full">
+          {/* replicate the boxes as compact grid items */}
+          <div>
+            <StaggeredBox className="p-3 w-full h-40">
+              <h3 className="text-xs font-semibold mb-1">ABNT01</h3>
+              <p className="text-[11px] opacity-80">All systems nominal — monitoring sensors active.</p>
+            </StaggeredBox>
+          </div>
 
-      <div className="absolute inset-0 px-8 flex justify-between items-center z-40 pointer-events-none">
-        <motion.div className="flex flex-col gap-4 pointer-events-auto" variants={containerVariants} initial="hidden" animate="visible">
-          <StaggeredBox className="p-4 w-64 h-64 flex flex-col">
-            <h2 className="text-2xl font-bold mb-2 tracking-wider text-[#66fff0]">ABNT01</h2>
-            <div className="flex flex-col justify-start">
-              <h3 className="text-sm font-semibold mb-2 mt-2">SYSTEM STATUS</h3>
-              <p className="text-sm opacity-80">All systems nominal — monitoring sensors active. Core temperature stable at 72°C.</p>
-            </div>
-            <div className="mt-2 text-xs flex items-center justify-between opacity-80 border-t border-cyan-500/20 pt-2">
-              <span>CPU Utilization</span>
-              <span className="text-green-400 font-mono">87.5%</span>
-            </div>
-          </StaggeredBox>
+          <div>
+            <StaggeredBox className="p-3 w-full h-40">
+              <h3 className="text-xs font-semibold text-yellow-400">THREAT</h3>
+              <p className="text-[11px] opacity-80">Threat Level: <span className="text-yellow-300">MED</span></p>
+            </StaggeredBox>
+          </div>
 
-          <StaggeredBox className="p-4 w-64">
-            <h3 className="text-xs font-semibold text-yellow-400">THREAT ASSESSMENT</h3>
-            <p className="text-[11px] mt-2 opacity-80">Threat Level: <span className="text-yellow-300">MEDIUM</span>. Proximity: 1.2 AU.</p>
-            <div className="mt-3 text-[11px] flex items-center justify-between opacity-80">
-              <span>Threat Vector</span>
-              <span>Kilo-98</span>
-            </div>
-          </StaggeredBox>
+          <div>
+            <StaggeredBox className="p-3 w-full h-20">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={bands}>
+                  <Bar dataKey="value" fill="#00ffef" isAnimationActive={false} />
+                  <XAxis dataKey="name" hide />
+                  <YAxis hide domain={[0, 128]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </StaggeredBox>
+          </div>
 
-          <StaggeredBox className="p-3 w-64 h-20">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={bands}>
-                <Bar dataKey="value" fill="#00ffef" isAnimationActive={false} />
-                <XAxis dataKey="name" hide />
-                <YAxis hide domain={[0, 128]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </StaggeredBox>
+          <div>
+            <StaggeredBox className="p-3 w-full h-20">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={bands}>
+                  <Line type="monotone" dataKey="value" stroke="#00ffef" strokeWidth={2} dot={false} isAnimationActive={false} />
+                  <XAxis dataKey="name" hide />
+                  <YAxis hide domain={[0, 128]} />
+                </LineChart>
+              </ResponsiveContainer>
+            </StaggeredBox>
+          </div>
 
-          <StaggeredBox className="p-3 w-64 h-20">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={bands}>
-                <Line type="monotone" dataKey="value" stroke="#00ffef" strokeWidth={2} dot={false} isAnimationActive={false} />
-                <XAxis dataKey="name" hide />
-                <YAxis hide domain={[0, 128]} />
-              </LineChart>
-            </ResponsiveContainer>
-          </StaggeredBox>
+          <div>
+            <StaggeredBox className="p-3 w-full h-28">
+              <h3 className="text-xs font-semibold">DATA LOG</h3>
+              <p className="text-[11px] opacity-80">Last Sync: 21:05:44</p>
+            </StaggeredBox>
+          </div>
 
-          <StaggeredBox className="p-4 w-64">
-            <h3 className="text-xs font-semibold">DATA TRANSFER LOG</h3>
-            <p className="text-[11px] mt-2 opacity-80">Last Sync: 21:05:44. Packet Loss: 0.1%</p>
-            <div className="mt-3 text-[11px] flex items-center justify-between opacity-80">
-              <span>Bandwidth</span>
-              <span>1.2 Tb/s</span>
-            </div>
-          </StaggeredBox>
-        </motion.div>
+          <div>
+            <StaggeredBox className="p-3 w-full h-28">
+              <TypingConsoleContent />
+            </StaggeredBox>
+          </div>
+        </div>
 
-        <motion.div className="flex flex-col gap-4 pointer-events-auto" variants={containerVariants} initial="hidden" animate="visible" transition={{ staggerChildren: 0.15, delayChildren: 1.0 }}>
-          <StaggeredBox className="w-64 h-64">
-            <TypingConsoleContent />
-          </StaggeredBox>
+        {/* DESKTOP LAYOUT (hidden on mobile) */}
+        <div className="hidden md:flex justify-between items-start gap-6">
+          <motion.div className="flex flex-col gap-4 pointer-events-auto md:pl-4" variants={containerVariants} initial="hidden" animate="visible">
+            <StaggeredBox className="p-4 w-64 h-64 flex flex-col">
+              <h2 className="text-2xl font-bold mb-2 tracking-wider text-[#66fff0]">ABNT01</h2>
+              <div className="flex flex-col justify-start">
+                <h3 className="text-sm font-semibold mb-2 mt-2">SYSTEM STATUS</h3>
+                <p className="text-sm opacity-80">All systems nominal — monitoring sensors active. Core temperature stable at 72°C.</p>
+              </div>
+              <div className="mt-2 text-xs flex items-center justify-between opacity-80 border-t border-cyan-500/20 pt-2">
+                <span>CPU Utilization</span>
+                <span className="text-green-400 font-mono">87.5%</span>
+              </div>
+            </StaggeredBox>
 
-          <StaggeredBox className="p-4 w-64">
-            <h3 className="text-xs font-semibold">WEATHER OVERVIEW</h3>
-            <p className="text-[11px] mt-2 opacity-80">Atmospheric readings: stable</p>
-            <div className="mt-3 text-[11px] flex items-center justify-between opacity-80">
-              <span>Pressure</span>
-              <span>1012 hPa</span>
-            </div>
-          </StaggeredBox>
+            <StaggeredBox className="p-4 w-64">
+              <h3 className="text-xs font-semibold text-yellow-400">THREAT ASSESSMENT</h3>
+              <p className="text-[11px] mt-2 opacity-80">Threat Level: <span className="text-yellow-300">MEDIUM</span>. Proximity: 1.2 AU.</p>
+              <div className="mt-3 text-[11px] flex items-center justify-between opacity-80">
+                <span>Threat Vector</span>
+                <span>Kilo-98</span>
+              </div>
+            </StaggeredBox>
 
-          <StaggeredBox className="p-4 w-64">
-            <h3 className="text-xs font-semibold">RESOURCE ALLOCATION</h3>
-            <p className="text-[11px] mt-2 opacity-80">Memory Pool: <span className="text-green-300">OPTIMAL</span>. Reserve: 40%</p>
-            <div className="mt-3 text-[11px] flex items-center justify-between opacity-80">
-              <span>Energy Core</span>
-              <span>99%</span>
-            </div>
-          </StaggeredBox>
+            <StaggeredBox className="p-3 w-64 h-20">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={bands}>
+                  <Bar dataKey="value" fill="#00ffef" isAnimationActive={false} />
+                  <XAxis dataKey="name" hide />
+                  <YAxis hide domain={[0, 128]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </StaggeredBox>
 
-          <StaggeredBox className="p-3 w-64 h-20">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={bands}>
-                <Bar dataKey="value" fill="#66fff0" isAnimationActive={false} />
-                <XAxis dataKey="name" hide />
-                <YAxis hide domain={[0, 128]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </StaggeredBox>
+            <StaggeredBox className="p-3 w-64 h-20">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={bands}>
+                  <Line type="monotone" dataKey="value" stroke="#00ffef" strokeWidth={2} dot={false} isAnimationActive={false} />
+                  <XAxis dataKey="name" hide />
+                  <YAxis hide domain={[0, 128]} />
+                </LineChart>
+              </ResponsiveContainer>
+            </StaggeredBox>
 
-          <StaggeredBox className="p-4 w-64">
-            <h3 className="text-xs font-semibold">GEO-TELEMETRY</h3>
-            <p className="text-[11px] mt-2 opacity-80">Lattice Integrity: 99.9%. Tilt: 0.001°</p>
-            <div className="mt-3 text-[11px] flex items-center justify-between opacity-80">
-              <span>Target Lock</span>
-              <span>Active</span>
-            </div>
-          </StaggeredBox>
-        </motion.div>
+            <StaggeredBox className="p-4 w-64">
+              <h3 className="text-xs font-semibold">DATA TRANSFER LOG</h3>
+              <p className="text-[11px] mt-2 opacity-80">Last Sync: 21:05:44. Packet Loss: 0.1%</p>
+              <div className="mt-3 text-[11px] flex items-center justify-between opacity-80">
+                <span>Bandwidth</span>
+                <span>1.2 Tb/s</span>
+              </div>
+            </StaggeredBox>
+          </motion.div>
+
+          <motion.div className="flex flex-col gap-4 pointer-events-auto md:pr-4 mt-0" variants={containerVariants} initial="hidden" animate="visible" transition={{ staggerChildren: 0.15, delayChildren: 1.0 }}>
+            <StaggeredBox className="w-64 h-64">
+              <div className="w-full h-full flex items-center justify-center">
+                <div className="transform scale-95 md:scale-100">
+                  <TypingConsoleContent />
+                </div>
+              </div>
+            </StaggeredBox>
+
+            <StaggeredBox className="p-4 w-64">
+              <h3 className="text-xs font-semibold">WEATHER OVERVIEW</h3>
+              <p className="text-[11px] mt-2 opacity-80">Atmospheric readings: stable</p>
+              <div className="mt-3 text-[11px] flex items-center justify-between opacity-80">
+                <span>Pressure</span>
+                <span>1012 hPa</span>
+              </div>
+            </StaggeredBox>
+
+            <StaggeredBox className="p-4 w-64">
+              <h3 className="text-xs font-semibold">RESOURCE ALLOCATION</h3>
+              <p className="text-[11px] mt-2 opacity-80">Memory Pool: <span className="text-green-300">OPTIMAL</span>. Reserve: 40%</p>
+              <div className="mt-3 text-[11px] flex items-center justify-between opacity-80">
+                <span>Energy Core</span>
+                <span>99%</span>
+              </div>
+            </StaggeredBox>
+
+            <StaggeredBox className="p-3 w-64 h-20">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={bands}>
+                  <Bar dataKey="value" fill="#66fff0" isAnimationActive={false} />
+                  <XAxis dataKey="name" hide />
+                  <YAxis hide domain={[0, 128]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </StaggeredBox>
+
+            <StaggeredBox className="p-4 w-64">
+              <h3 className="text-xs font-semibold">GEO-TELEMETRY</h3>
+              <p className="text-[11px] mt-2 opacity-80">Lattice Integrity: 99.9%. Tilt: 0.001°</p>
+              <div className="mt-3 text-[11px] flex items-center justify-between opacity-80">
+                <span>Target Lock</span>
+                <span>Active</span>
+              </div>
+            </StaggeredBox>
+          </motion.div>
+        </div>
       </div>
 
-      <Ticker animation={{ ...simpleFade, transition: { ...simpleFade.animate.transition, delay: 1.8 } }} />
+      {/* Ticker: mobile -> flows in document; desktop -> overlay */}
+      <div className="w-full md:absolute md:inset-x-0 md:bottom-16 md:mx-0 md:px-8 px-4 mt-6 md:mt-0 z-40 pointer-events-none">
+        <Ticker animation={{ ...simpleFade, transition: { ...simpleFade.animate.transition, delay: 1.8 } }} />
+      </div>
 
-      <motion.div className="absolute bottom-8 left-8 right-8 flex items-center justify-between px-8 z-50 pointer-events-none" {...simpleFade} transition={{ ...simpleFade.animate.transition, delay: 2.0 }}>
-        <div className="flex items-center gap-3">
-          <motion.button whileTap={{ scale: 0.95 }} className="glass-panel px-4 py-2 rounded-full pointer-events-auto">1D</motion.button>
-          <motion.button whileTap={{ scale: 0.95 }} className="glass-panel px-4 py-2 rounded-full pointer-events-auto">S/N</motion.button>
-          <motion.button whileTap={{ scale: 0.95 }} className="glass-panel px-4 py-2 rounded-full pointer-events-auto">S/A</motion.button>
+      {/* Bottom controls: static on mobile (flows under ticker), overlay on desktop */}
+      <motion.div className="w-full md:absolute md:bottom-4 md:left-4 md:right-4 mt-4 md:mt-0 flex items-center justify-between px-4 md:px-8 z-50 pointer-events-none" {...simpleFade} transition={{ ...simpleFade.animate.transition, delay: 2.0 }}>
+        <div className="flex items-center gap-3 pointer-events-auto">
+          <motion.button whileTap={{ scale: 0.95 }} className="glass-panel px-3 md:px-4 py-2 rounded-full">1D</motion.button>
+          <motion.button whileTap={{ scale: 0.95 }} className="glass-panel px-3 md:px-4 py-2 rounded-full">S/N</motion.button>
+          <motion.button whileTap={{ scale: 0.95 }} className="glass-panel px-3 md:px-4 py-2 rounded-full">S/A</motion.button>
         </div>
-        <div className="flex items-center gap-3">
-          <motion.button whileTap={{ scale: 0.95 }} className="glass-panel px-4 py-2 rounded-full pointer-events-auto">Views</motion.button>
-          <motion.button whileTap={{ scale: 0.95 }} className="glass-panel px-4 py-2 rounded-full pointer-events-auto">Recalculate</motion.button>
-          <motion.button whileTap={{ scale: 0.95 }} className="glass-panel px-4 py-2 rounded-full pointer-events-auto">N/Waves</motion.button>
+        <div className="flex items-center gap-3 pointer-events-auto">
+          <motion.button whileTap={{ scale: 0.95 }} className="glass-panel px-3 md:px-4 py-2 rounded-full">Views</motion.button>
+          <motion.button whileTap={{ scale: 0.95 }} className="glass-panel px-3 md:px-4 py-2 rounded-full">Recalculate</motion.button>
+          <motion.button whileTap={{ scale: 0.95 }} className="glass-panel px-3 md:px-4 py-2 rounded-full">N/Waves</motion.button>
         </div>
       </motion.div>
 
-      {/* site background audio element (used by equalizer) */}
       <audio ref={audioRef} src="/sound.mp3" preload="auto" style={{ display: "none" }} />
 
       <style>{`
@@ -792,7 +809,40 @@ export default function App(): JSX.Element {
                 box-shadow: 0 0 30px rgba(0, 255, 255, 0.2), 0 6px 15px rgba(0, 0, 0, 0.6);
                 border-radius: 12px;
             }
-            @media (max-width: 1280px) {
+
+            /* Prevent horizontal overflow on small devices */
+            html, body {
+              width: 100%;
+              overflow-x: hidden;
+            }
+
+            canvas {
+              touch-action: none;
+              width: 100% !important;
+              height: 100% !important;
+            }
+
+            /* Mobile-specific change: ensure panels sit closer to globe and show grid */
+            @media (max-width: 767px) {
+                .md\\:absolute { position: static !important; }
+            }
+
+            /* gentle scaling for very small screens so layout fits while keeping the UI identical on desktop */
+            @media (max-width: 640px) {
+                .glass-panel {
+                    transform-origin: top left;
+                    transform: scale(0.96);
+                }
+            }
+
+            @media (max-width: 420px) {
+                .glass-panel {
+                    transform-origin: top left;
+                    transform: scale(0.92);
+                }
+            }
+
+            @media (min-width: 768px) {
                 header nav {
                     display: none;
                 }

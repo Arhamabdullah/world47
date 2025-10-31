@@ -10,7 +10,7 @@
   "static/chunks/node_modules_react-dom_cjs_react-dom_development_2b5e0eb3.js",
   "static/chunks/node_modules_react-dom_8a8085df._.js",
   "static/chunks/node_modules_framer-motion_dist_es_72a59d34._.js",
-  "static/chunks/node_modules_982278e9._.js",
+  "static/chunks/node_modules_7187c693._.js",
   "static/chunks/[root-of-the-server]__76ce04a3._.js"
 ],
     source: "entry"

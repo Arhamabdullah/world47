@@ -15,7 +15,7 @@
   "static/chunks/node_modules_react-reconciler_eb89a692._.js",
   "static/chunks/node_modules_@react-three_fiber_dist_a9a43180._.js",
   "static/chunks/node_modules_recharts_es6_3d8f9874._.js",
-  "static/chunks/node_modules_64f7e71e._.js"
+  "static/chunks/node_modules_970b4216._.js"
 ],
     source: "entry"
 });

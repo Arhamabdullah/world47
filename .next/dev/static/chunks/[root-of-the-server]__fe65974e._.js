@@ -473,8 +473,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/index.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/dom/motion.mjs [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volume$2d$2$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Volume2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/volume-2.js [client] (ecmascript) <export default as Volume2>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volume$2d$2$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Volume2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/volume-2.js [client] (ecmascript) <export default as Volume2>"); // Added Menu and X icons
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volume$2d$x$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__VolumeX$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/volume-x.js [client] (ecmascript) <export default as VolumeX>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/menu.js [client] (ecmascript) <export default as Menu>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [client] (ecmascript) <export default as X>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/link.js [client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
@@ -483,7 +485,7 @@ var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.sign
 ;
 ;
 ;
-const NavButton = ({ label, href })=>{
+const NavButton = ({ label, href, onClick })=>{
     _s();
     const [isHovering, setIsHovering] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const ButtonContent = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -492,9 +494,13 @@ const NavButton = ({ label, href })=>{
         },
         onMouseEnter: ()=>setIsHovering(true),
         onMouseLeave: ()=>setIsHovering(false),
-        className: `relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 whitespace-nowrap ${href ? "cursor-pointer" : "cursor-default opacity-90"}`,
+        onClick: onClick,
+        className: `relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 whitespace-nowrap ${href ? "cursor-pointer" : "cursor-default opacity-90"}
+      // **RESPONSIVENESS ADDED:** full width on small screens, fixed width on large
+      w-full xl:w-[110px] xl:text-center
+      `,
         style: {
-            width: "110px",
+            // Removed fixed width here, now handled by Tailwind w-full/xl:w-[110px]
             textAlign: "center"
         },
         animate: {
@@ -530,32 +536,33 @@ const NavButton = ({ label, href })=>{
                     children: isHovering && !href ? "COMING SOON" : label.toUpperCase()
                 }, isHovering && !href ? "coming-soon" : "label", false, {
                     fileName: "[project]/components/header.tsx",
-                    lineNumber: 49,
+                    lineNumber: 55,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/components/header.tsx",
-                lineNumber: 48,
+                lineNumber: 54,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/components/header.tsx",
-            lineNumber: 47,
+            lineNumber: 53,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/header.tsx",
-        lineNumber: 17,
+        lineNumber: 19,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
-    // ✅ Wrap in <Link> only when href exists
-    return href ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+    return href ? // Added onClick here to ensure Link also closes the menu
+    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
         href: href,
         className: "block",
+        onClick: onClick,
         children: ButtonContent
     }, void 0, false, {
         fileName: "[project]/components/header.tsx",
-        lineNumber: 70,
+        lineNumber: 76,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0)) : ButtonContent;
 };
@@ -568,29 +575,76 @@ const ActionButton = ({ label, href })=>/*#__PURE__*/ (0, __TURBOPACK__imported_
             whileTap: {
                 scale: 0.92
             },
-            className: "flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500 text-cyan-100 bg-[#00121a]/30 backdrop-blur-sm cursor-pointer flex-shrink-0",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "text-sm font-medium",
-                children: label
-            }, void 0, false, {
-                fileName: "[project]/components/header.tsx",
-                lineNumber: 90,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0))
-        }, void 0, false, {
+            className: "flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-cyan-500 text-cyan-100 bg-[#00121a]/30 backdrop-blur-sm cursor-pointer flex-shrink-0",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: "text-sm font-medium hidden sm:inline",
+                    children: label
+                }, void 0, false, {
+                    fileName: "[project]/components/header.tsx",
+                    lineNumber: 97,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0)),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: "text-sm font-medium sm:hidden",
+                    children: label === "Login" ? "Log In" : "Sign Up"
+                }, void 0, false, {
+                    fileName: "[project]/components/header.tsx",
+                    lineNumber: 99,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0))
+            ]
+        }, void 0, true, {
             fileName: "[project]/components/header.tsx",
-            lineNumber: 86,
+            lineNumber: 92,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/header.tsx",
-        lineNumber: 85,
+        lineNumber: 91,
         columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
 _c1 = ActionButton;
+const SoundButton = ({ audioActive, handleToggle })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].button, {
+        whileTap: {
+            scale: 0.92
+        },
+        onClick: handleToggle,
+        className: "flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-cyan-500 text-cyan-100 bg-[#00121a]/30 backdrop-blur-sm flex-shrink-0",
+        "aria-label": audioActive ? "Toggle sound off" : "Toggle sound on",
+        children: [
+            audioActive ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volume$2d$2$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Volume2$3e$__["Volume2"], {
+                size: 18
+            }, void 0, false, {
+                fileName: "[project]/components/header.tsx",
+                lineNumber: 119,
+                columnNumber: 20
+            }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volume$2d$x$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__VolumeX$3e$__["VolumeX"], {
+                size: 18
+            }, void 0, false, {
+                fileName: "[project]/components/header.tsx",
+                lineNumber: 119,
+                columnNumber: 44
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "text-sm hidden sm:inline",
+                children: audioActive ? "Sound On" : "Sound Off"
+            }, void 0, false, {
+                fileName: "[project]/components/header.tsx",
+                lineNumber: 121,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/header.tsx",
+        lineNumber: 113,
+        columnNumber: 3
+    }, ("TURBOPACK compile-time value", void 0));
+_c2 = SoundButton;
 function Header() {
     _s1();
     const [audioActive, setAudioActive] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isMenuOpen, setIsMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(false); // **New State for Mobile Menu**
     const audioRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const handleToggle = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "Header.useCallback[handleToggle]": ()=>{
@@ -601,6 +655,7 @@ function Header() {
             } else {
                 audioRef.current.volume = 0.45;
                 audioRef.current.loop = true;
+                // Use .catch(() => {}) to prevent unhandled promise rejection if play fails
                 audioRef.current.play().catch({
                     "Header.useCallback[handleToggle]": ()=>{}
                 }["Header.useCallback[handleToggle]"]);
@@ -610,6 +665,18 @@ function Header() {
     }["Header.useCallback[handleToggle]"], [
         audioActive
     ]);
+    const toggleMenu = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Header.useCallback[toggleMenu]": ()=>{
+            setIsMenuOpen({
+                "Header.useCallback[toggleMenu]": (prev)=>!prev
+            }["Header.useCallback[toggleMenu]"]);
+        }
+    }["Header.useCallback[toggleMenu]"], []);
+    const closeMenu = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Header.useCallback[closeMenu]": ()=>{
+            setIsMenuOpen(false);
+        }
+    }["Header.useCallback[closeMenu]"], []);
     const navPages = [
         {
             label: "World47",
@@ -646,7 +713,7 @@ function Header() {
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].header, {
-        className: "w-full flex flex-nowrap items-center justify-between py-[22px] px-4 bg-gradient-to-r from-[#0b1120] to-[#111633] text-cyan-100 overflow-hidden",
+        className: "relative w-full flex items-center justify-between py-[22px] px-4 bg-gradient-to-r from-[#0b1120] to-[#111633] text-cyan-100 z-50",
         initial: {
             opacity: 0
         },
@@ -658,14 +725,14 @@ function Header() {
         },
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex items-center gap-8 flex-shrink-1",
+                className: "flex items-center gap-8 flex-shrink-0",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "text-2xl font-bold tracking-tight text-cyan-100 flex-shrink-0",
                         children: "WORLD 47"
                     }, void 0, false, {
                         fileName: "[project]/components/header.tsx",
-                        lineNumber: 134,
+                        lineNumber: 177,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -675,29 +742,29 @@ function Header() {
                                 href: page.href
                             }, i, false, {
                                 fileName: "[project]/components/header.tsx",
-                                lineNumber: 139,
+                                lineNumber: 183,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/header.tsx",
-                        lineNumber: 137,
+                        lineNumber: 181,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/header.tsx",
-                lineNumber: 133,
+                lineNumber: 176,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex items-center gap-4 flex-shrink-0",
+                className: "flex items-center gap-2 sm:gap-4 flex-shrink-0",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ActionButton, {
                         label: "Login",
                         href: "/loginpage"
                     }, void 0, false, {
                         fileName: "[project]/components/header.tsx",
-                        lineNumber: 146,
+                        lineNumber: 190,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ActionButton, {
@@ -705,47 +772,84 @@ function Header() {
                         href: "/signuppage"
                     }, void 0, false, {
                         fileName: "[project]/components/header.tsx",
-                        lineNumber: 147,
+                        lineNumber: 191,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SoundButton, {
+                        audioActive: audioActive,
+                        handleToggle: handleToggle
+                    }, void 0, false, {
+                        fileName: "[project]/components/header.tsx",
+                        lineNumber: 192,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].button, {
                         whileTap: {
                             scale: 0.92
                         },
-                        onClick: handleToggle,
-                        className: "flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500 text-cyan-100 bg-[#00121a]/30 backdrop-blur-sm flex-shrink-0",
-                        children: [
-                            audioActive ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volume$2d$2$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Volume2$3e$__["Volume2"], {
-                                size: 18
-                            }, void 0, false, {
-                                fileName: "[project]/components/header.tsx",
-                                lineNumber: 153,
-                                columnNumber: 26
-                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volume$2d$x$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__VolumeX$3e$__["VolumeX"], {
-                                size: 18
-                            }, void 0, false, {
-                                fileName: "[project]/components/header.tsx",
-                                lineNumber: 153,
-                                columnNumber: 50
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-sm",
-                                children: audioActive ? "Sound On" : "Sound Off"
-                            }, void 0, false, {
-                                fileName: "[project]/components/header.tsx",
-                                lineNumber: 154,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                        onClick: toggleMenu,
+                        className: "xl:hidden flex items-center px-3 py-2 rounded-full border border-cyan-500 text-cyan-100 bg-[#00121a]/30 backdrop-blur-sm flex-shrink-0",
+                        "aria-label": isMenuOpen ? "Close menu" : "Open menu",
+                        children: isMenuOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                            size: 20
+                        }, void 0, false, {
+                            fileName: "[project]/components/header.tsx",
+                            lineNumber: 201,
+                            columnNumber: 27
+                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
+                            size: 20
+                        }, void 0, false, {
+                            fileName: "[project]/components/header.tsx",
+                            lineNumber: 201,
+                            columnNumber: 45
+                        }, this)
+                    }, void 0, false, {
                         fileName: "[project]/components/header.tsx",
-                        lineNumber: 148,
+                        lineNumber: 195,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/header.tsx",
-                lineNumber: 145,
+                lineNumber: 189,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                children: isMenuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].nav, {
+                    initial: {
+                        opacity: 0,
+                        y: -20
+                    },
+                    animate: {
+                        opacity: 1,
+                        y: 0
+                    },
+                    exit: {
+                        opacity: 0,
+                        y: -20
+                    },
+                    transition: {
+                        duration: 0.3
+                    },
+                    className: "absolute top-[80px] left-0 w-full bg-gradient-to-b from-[#0b1120] to-[#111633] border-t border-cyan-900 shadow-xl xl:hidden z-40 p-4 space-y-2",
+                    children: navPages.map((page, i)=>// Pass closeMenu as onClick to close the menu when a link is clicked
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(NavButton, {
+                            label: page.label,
+                            href: page.href,
+                            onClick: closeMenu
+                        }, i, false, {
+                            fileName: "[project]/components/header.tsx",
+                            lineNumber: 217,
+                            columnNumber: 15
+                        }, this))
+                }, void 0, false, {
+                    fileName: "[project]/components/header.tsx",
+                    lineNumber: 208,
+                    columnNumber: 11
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/components/header.tsx",
+                lineNumber: 206,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("audio", {
@@ -757,22 +861,23 @@ function Header() {
                 }
             }, void 0, false, {
                 fileName: "[project]/components/header.tsx",
-                lineNumber: 158,
+                lineNumber: 224,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/header.tsx",
-        lineNumber: 126,
+        lineNumber: 169,
         columnNumber: 5
     }, this);
 }
-_s1(Header, "NbXPo+kwKk6rnuBjDj/mljo7Ocs=");
-_c2 = Header;
-var _c, _c1, _c2;
+_s1(Header, "5DlTtge0fs7W+nDVDP3uWQG0koM=");
+_c3 = Header;
+var _c, _c1, _c2, _c3;
 __turbopack_context__.k.register(_c, "NavButton");
 __turbopack_context__.k.register(_c1, "ActionButton");
-__turbopack_context__.k.register(_c2, "Header");
+__turbopack_context__.k.register(_c2, "SoundButton");
+__turbopack_context__.k.register(_c3, "Header");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -783,7 +888,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 /* eslint-disable @typescript-eslint/ban-ts-comment */ // @ts-nocheck
 __turbopack_context__.s([
     "default",
-    ()=>__TURBOPACK__default__export__
+    ()=>App
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/index.js [client] (ecmascript)");
@@ -791,12 +896,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$mo
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$square$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageSquare$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/message-square.js [client] (ecmascript) <export default as MessageSquare>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$question$2d$mark$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__HelpCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-question-mark.js [client] (ecmascript) <export default as HelpCircle>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/mail.js [client] (ecmascript) <export default as Mail>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/users.js [client] (ecmascript) <export default as Users>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/send.js [client] (ecmascript) <export default as Send>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/loader-circle.js [client] (ecmascript) <export default as Loader2>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Link$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/link.js [client] (ecmascript) <export default as Link>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-down.js [client] (ecmascript) <export default as ChevronDown>");
-// 1. IMPORT THE HEADER COMPONENT
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/header.tsx [client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
@@ -805,239 +907,62 @@ var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.sign
 ;
 ;
 ;
-/* ------------------------------
-    Constants & Configuration
-    ------------------------------ */ // Gemini API Configuration - NOTE: This model is used for the AI Chat Bot
-const API_CONFIG = {
-    model: "gemini-2.5-flash-preview-09-2025",
-    apiUrl: "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent",
-    apiKey: ""
-};
 const FAQ_DATA = [
     {
         q: "What is ABN Crypto?",
-        a: "ABN (Aethelborn Network) Crypto is the official digital currency of the World47 ecosystem. It's used for in-app purchases, rewarding content creators, and unlocking exclusive access to digital artifacts."
+        a: "ABN (Aethelborn Network) Crypto is the official digital currency of the World47 ecosystem..."
     },
     {
         q: "How do I redeem my QR Code reward?",
-        a: "Navigate to the Rewards Terminal, select 'QR Code Redemption,' and either upload a screenshot of the unique code from your E-book receipt or use your phone's camera for a live scan. The system will automatically credit your ABN balance."
+        a: "Navigate to the Rewards Terminal and select 'QR Code Redemption'..."
     },
     {
         q: "Where can I find my user ID?",
-        a: "Your unique User ID (e.g., ABNT01-34x-SYN) is displayed prominently on the Rewards Terminal page, right above your current ABN balance and below your username."
+        a: "Your User ID (e.g., ABNT01-34x-SYN) appears on the Rewards Terminal page above your balance."
     },
     {
         q: "Can I transfer ABN to other users?",
-        a: "Yes. Use the Transfer function on the Rewards Terminal. You need the recipient's User ID to initiate a secure peer-to-peer transfer. Transfers are instant and incur a minimal network fee."
+        a: "Yes. Use the Transfer function with the recipient's User ID for instant transfer."
     }
 ];
-/* ------------------------------
-    Animation Variants
-    ------------------------------ */ const panelVariants = {
-    hidden: {
-        opacity: 0,
-        scale: 0.98
-    },
-    visible: {
-        opacity: 1,
-        scale: 1,
-        transition: {
-            duration: 0.35,
-            ease: "easeOut"
-        }
-    }
+const makeApiCall = async (query, systemInstruction)=>{
+    const res = await fetch("/api/gemini", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            query,
+            systemInstruction
+        })
+    });
+    const data = await res.json();
+    return data;
 };
-const contentVariants = {
-    hidden: {
-        opacity: 0,
-        y: 5
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            delay: 0.3,
-            duration: 0.3,
-            ease: "easeOut"
-        }
-    }
-};
-const chatMessageVariants = {
-    hidden: {
-        opacity: 0,
-        y: 10,
-        scale: 0.95
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: {
-            type: "spring",
-            stiffness: 300,
-            damping: 30
-        }
-    }
-};
-/* ------------------------------
-    Reusable UI pieces
-    ------------------------------ */ const StaggeredBox = ({ children, className = "" })=>{
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
-        className: `glass-panel ${className}`,
-        variants: panelVariants,
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
-            className: "h-full w-full",
-            variants: contentVariants,
-            children: children
-        }, void 0, false, {
-            fileName: "[project]/pages/HelpPage.tsx",
-            lineNumber: 90,
-            columnNumber: 13
-        }, ("TURBOPACK compile-time value", void 0))
-    }, void 0, false, {
-        fileName: "[project]/pages/HelpPage.tsx",
-        lineNumber: 89,
-        columnNumber: 9
-    }, ("TURBOPACK compile-time value", void 0));
-};
-_c = StaggeredBox;
-/* ------------------------------
-    API & Utility Functions
-    ------------------------------ */ /**
- * Helper to make the Gemini API call with exponential backoff.
- */ const makeApiCall = async (query, systemInstruction, maxRetries = 3)=>{
-    // This payload enables Google Search grounding
-    const payload = {
-        contents: [
-            {
-                parts: [
-                    {
-                        text: query
-                    }
-                ]
-            }
-        ],
-        tools: [
-            {
-                "google_search": {}
-            }
-        ],
-        systemInstruction: {
-            parts: [
-                {
-                    text: systemInstruction
-                }
-            ]
-        }
-    };
-    for(let attempt = 0; attempt < maxRetries; attempt++){
-        try {
-            const response = await fetch("/api/gemini", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    query,
-                    systemInstruction
-                })
-            });
-            if (!response.ok) {
-                // Log non-200 status errors
-                console.error(`Attempt ${attempt + 1}: API call failed with status: ${response.status}`);
-                if (response.status === 429 && attempt < maxRetries - 1) {
-                    await new Promise((resolve)=>setTimeout(resolve, Math.pow(2, attempt) * 1000));
-                    continue; // Retry after backoff
-                }
-                throw new Error(`API returned status ${response.status}`);
-            }
-            // Attempt to parse JSON response
-            let result;
-            try {
-                result = await response.json();
-            } catch (e) {
-                console.error(`Attempt ${attempt + 1}: Failed to parse JSON response.`, e);
-                // If parsing fails, treat it as a temporary error and retry (if not last attempt)
-                if (attempt < maxRetries - 1) {
-                    await new Promise((resolve)=>setTimeout(resolve, Math.pow(2, attempt) * 1000));
-                    continue;
-                }
-                throw new Error('Invalid response format from API.');
-            }
-            const candidate = result.candidates?.[0];
-            if (candidate && candidate.content?.parts?.[0]?.text) {
-                const text = candidate.content.parts[0].text;
-                let sources = [];
-                // Extract grounding sources from the response metadata
-                const groundingMetadata = candidate.groundingMetadata;
-                if (groundingMetadata && groundingMetadata.groundingAttributions) {
-                    sources = groundingMetadata.groundingAttributions.map((attribution)=>({
-                            uri: attribution.web?.uri,
-                            title: attribution.web?.title
-                        })).filter((source)=>source.uri && source.title);
-                }
-                return {
-                    id: Date.now(),
-                    role: 'bot',
-                    text: text,
-                    sources: sources
-                };
-            }
-            // Handle cases where response is OK but contains no text/candidates
-            console.warn(`Attempt ${attempt + 1}: API response OK, but no valid text found.`);
-            return {
-                id: Date.now(),
-                role: 'bot',
-                text: 'Sorry, I received an empty response. Please try rephrasing your question.',
-                sources: []
-            };
-        } catch (error) {
-            console.error(`Attempt ${attempt + 1}: General error during API call.`, error);
-            if (attempt === maxRetries - 1) {
-                // On final attempt failure, return a user-facing error message
-                return {
-                    id: Date.now() + 1,
-                    role: 'bot',
-                    text: 'I encountered a connection error. Please try again later.',
-                    sources: []
-                };
-            }
-            // Wait for exponential backoff before retrying
-            await new Promise((resolve)=>setTimeout(resolve, Math.pow(2, attempt) * 1000));
-        }
-    }
-    return null;
-};
-/* ------------------------------
-    INNER PAGE COMPONENTS
-    ------------------------------ */ const AIChatBot = ()=>{
+const AIChatBot = ()=>{
     _s();
     const [messages, setMessages] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [input, setInput] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const chatEndRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const chatRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const systemInstruction = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useMemo"])({
-        "AIChatBot.useMemo[systemInstruction]": ()=>"You are World47 Support AI, a friendly and concise virtual assistant. Your role is to help users with FAQs about the platform and technical issues. Keep your answers brief and professional, typically under 50 words. Use Google Search grounding to provide up-to-date answers when necessary."
+        "AIChatBot.useMemo[systemInstruction]": ()=>"You are World47 Support AI. Help users with FAQs, crypto, or technical support concisely and politely."
     }["AIChatBot.useMemo[systemInstruction]"], []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AIChatBot.useEffect": ()=>{
-            // Initial welcome message
-            if (messages.length === 0) {
-                setMessages([
-                    {
-                        id: 0,
-                        role: 'bot',
-                        text: "Hello! I'm the World47 Support AI Bot. I can help you with questions about ABN Crypto, rewards, and technical issues. What can I assist you with today?",
-                        sources: []
-                    }
-                ]);
-            }
+            setMessages([
+                {
+                    id: 0,
+                    role: "bot",
+                    text: "Hello! I’m the World47 AI Assistant. How can I assist you today?"
+                }
+            ]);
         }
     }["AIChatBot.useEffect"], []);
-    // Scroll to bottom when new message arrives
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "AIChatBot.useEffect": ()=>{
-            chatEndRef.current?.scrollIntoView({
+            chatRef.current?.scrollTo({
+                top: chatRef.current.scrollHeight,
                 behavior: "smooth"
             });
         }
@@ -1046,41 +971,41 @@ _c = StaggeredBox;
     ]);
     const handleSend = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "AIChatBot.useCallback[handleSend]": async (e)=>{
-            e?.preventDefault();
-            const userQuery = input.trim();
-            if (!userQuery || isLoading) return;
+            e.preventDefault();
+            const userInput = input.trim();
+            if (!userInput || isLoading) return;
             setInput("");
             setIsLoading(true);
-            const newUserMessage = {
-                id: Date.now(),
-                role: 'user',
-                text: userQuery
-            };
             setMessages({
-                "AIChatBot.useCallback[handleSend]": (prev)=>[
-                        ...prev,
-                        newUserMessage
+                "AIChatBot.useCallback[handleSend]": (m)=>[
+                        ...m,
+                        {
+                            id: Date.now(),
+                            role: "user",
+                            text: userInput
+                        }
                     ]
             }["AIChatBot.useCallback[handleSend]"]);
-            // --- GEMINI API CALL ---
-            const botResponse = await makeApiCall(userQuery, systemInstruction);
-            if (botResponse) {
+            const reply = await makeApiCall(userInput, systemInstruction);
+            if (reply.type === "image" && reply.imageUrl) {
                 setMessages({
-                    "AIChatBot.useCallback[handleSend]": (prev)=>[
-                            ...prev,
-                            botResponse
+                    "AIChatBot.useCallback[handleSend]": (m)=>[
+                            ...m,
+                            {
+                                id: Date.now(),
+                                role: "bot",
+                                image: reply.imageUrl
+                            }
                         ]
                 }["AIChatBot.useCallback[handleSend]"]);
             } else {
-                // Fallback error message if all retries fail
                 setMessages({
-                    "AIChatBot.useCallback[handleSend]": (prev)=>[
-                            ...prev,
+                    "AIChatBot.useCallback[handleSend]": (m)=>[
+                            ...m,
                             {
-                                id: Date.now() + 1,
-                                role: 'bot',
-                                text: 'Connection failed after multiple attempts. Check your network or try again later.',
-                                sources: []
+                                id: Date.now(),
+                                role: "bot",
+                                text: reply.text || "No response."
                             }
                         ]
                 }["AIChatBot.useCallback[handleSend]"]);
@@ -1089,98 +1014,10 @@ _c = StaggeredBox;
         }
     }["AIChatBot.useCallback[handleSend]"], [
         input,
-        isLoading,
-        systemInstruction
+        isLoading
     ]);
-    // Component to render a single message bubble
-    const MessageBubble = ({ message })=>{
-        const isBot = message.role === 'bot';
-        const bgColor = isBot ? 'bg-cyan-800/40' : 'bg-blue-800/40';
-        const alignment = isBot ? 'justify-start' : 'justify-end';
-        const textColor = isBot ? 'text-cyan-100' : 'text-white';
-        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
-            className: `flex w-full ${alignment}`,
-            variants: chatMessageVariants,
-            initial: "hidden",
-            animate: "visible",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `max-w-xs md:max-w-md p-3 rounded-xl shadow-lg ${bgColor}`,
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: `text-sm ${textColor} mb-1`,
-                        children: message.text
-                    }, void 0, false, {
-                        fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 258,
-                        columnNumber: 21
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    message.sources && message.sources.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mt-2 pt-2 border-t border-white/10",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-[10px] font-mono opacity-60 mb-1",
-                                children: "Sources (Grounding):"
-                            }, void 0, false, {
-                                fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 261,
-                                columnNumber: 29
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                className: "space-y-0.5",
-                                children: message.sources.slice(0, 2).map((source, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                        className: "flex items-center text-[10px] opacity-70 hover:opacity-100 transition-opacity",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Link$3e$__["Link"], {
-                                                size: 10,
-                                                className: "mr-1 flex-shrink-0"
-                                            }, void 0, false, {
-                                                fileName: "[project]/pages/HelpPage.tsx",
-                                                lineNumber: 265,
-                                                columnNumber: 41
-                                            }, ("TURBOPACK compile-time value", void 0)),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                href: source.uri,
-                                                target: "_blank",
-                                                rel: "noopener noreferrer",
-                                                className: "truncate hover:underline",
-                                                title: source.title || source.uri,
-                                                children: source.title || source.uri
-                                            }, void 0, false, {
-                                                fileName: "[project]/pages/HelpPage.tsx",
-                                                lineNumber: 266,
-                                                columnNumber: 41
-                                            }, ("TURBOPACK compile-time value", void 0))
-                                        ]
-                                    }, index, true, {
-                                        fileName: "[project]/pages/HelpPage.tsx",
-                                        lineNumber: 264,
-                                        columnNumber: 37
-                                    }, ("TURBOPACK compile-time value", void 0)))
-                            }, void 0, false, {
-                                fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 262,
-                                columnNumber: 29
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 260,
-                        columnNumber: 25
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
-                fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 257,
-                columnNumber: 17
-            }, ("TURBOPACK compile-time value", void 0))
-        }, void 0, false, {
-            fileName: "[project]/pages/HelpPage.tsx",
-            lineNumber: 251,
-            columnNumber: 13
-        }, ("TURBOPACK compile-time value", void 0));
-    };
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StaggeredBox, {
-        className: "p-4 h-full flex flex-col",
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "glass-panel p-4 flex flex-col h-full",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex items-center gap-3 mb-4 border-b border-cyan-500/30 pb-3 flex-shrink-0",
@@ -1190,41 +1027,56 @@ _c = StaggeredBox;
                         className: "text-[#66fff0]"
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 282,
-                        columnNumber: 17
+                        lineNumber: 73,
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                         className: "text-xl font-mono tracking-wider text-white/90",
                         children: "LIVE SUPPORT AI CHAT"
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 283,
-                        columnNumber: 17
+                        lineNumber: 74,
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 281,
-                columnNumber: 13
+                lineNumber: 72,
+                columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                className: "flex-grow overflow-y-auto pr-3 space-y-4 scrollbar-thin min-h-0",
-                initial: {
-                    opacity: 0
-                },
-                animate: {
-                    opacity: 1
-                },
-                transition: {
-                    duration: 0.5
-                },
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                ref: chatRef,
+                className: "flex-grow overflow-y-auto pr-3 space-y-4 scrollbar-thin",
                 children: [
-                    messages.map((msg)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(MessageBubble, {
-                            message: msg
+                    messages.map((msg)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                            className: `flex ${msg.role === "bot" ? "justify-start" : "justify-end"}`,
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: `max-w-xs md:max-w-md p-3 rounded-xl ${msg.role === "bot" ? "bg-cyan-800/40" : "bg-blue-800/40"}`,
+                                children: msg.image ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    src: msg.image,
+                                    alt: "Generated",
+                                    className: "rounded-lg w-full"
+                                }, void 0, false, {
+                                    fileName: "[project]/pages/HelpPage.tsx",
+                                    lineNumber: 83,
+                                    columnNumber: 17
+                                }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-sm text-white",
+                                    children: msg.text
+                                }, void 0, false, {
+                                    fileName: "[project]/pages/HelpPage.tsx",
+                                    lineNumber: 85,
+                                    columnNumber: 17
+                                }, ("TURBOPACK compile-time value", void 0))
+                            }, void 0, false, {
+                                fileName: "[project]/pages/HelpPage.tsx",
+                                lineNumber: 81,
+                                columnNumber: 13
+                            }, ("TURBOPACK compile-time value", void 0))
                         }, msg.id, false, {
                             fileName: "[project]/pages/HelpPage.tsx",
-                            lineNumber: 296,
-                            columnNumber: 21
+                            lineNumber: 80,
+                            columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))),
                     isLoading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex justify-start",
@@ -1236,217 +1088,165 @@ _c = StaggeredBox;
                                     className: "animate-spin text-[#66fff0]"
                                 }, void 0, false, {
                                     fileName: "[project]/pages/HelpPage.tsx",
-                                    lineNumber: 302,
-                                    columnNumber: 29
+                                    lineNumber: 94,
+                                    columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "opacity-80",
                                     children: "AI is composing response..."
                                 }, void 0, false, {
                                     fileName: "[project]/pages/HelpPage.tsx",
-                                    lineNumber: 303,
-                                    columnNumber: 29
+                                    lineNumber: 95,
+                                    columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/pages/HelpPage.tsx",
-                            lineNumber: 301,
-                            columnNumber: 25
+                            lineNumber: 93,
+                            columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 300,
-                        columnNumber: 21
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        ref: chatEndRef
-                    }, void 0, false, {
-                        fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 308,
-                        columnNumber: 17
+                        lineNumber: 92,
+                        columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 289,
-                columnNumber: 13
+                lineNumber: 78,
+                columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                 onSubmit: handleSend,
-                className: "mt-4 pt-3 border-t border-cyan-500/30 flex-shrink-0 flex gap-2",
+                className: "mt-4 border-t border-cyan-500/30 flex gap-2 pt-3",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                        type: "text",
+                        className: "flex-grow bg-cyan-900/30 p-3 text-cyan-200 border border-cyan-500/50 focus:border-cyan-400 rounded-lg text-sm",
+                        placeholder: "Ask a question or generate an image...",
                         value: input,
-                        onChange: (e)=>setInput(e.target.value),
-                        placeholder: "Ask a question about World47 or your ABN account...",
-                        className: "flex-grow bg-cyan-900/30 p-3 text-cyan-200 border border-cyan-500/50 focus:border-cyan-400 focus:outline-none rounded-lg font-mono text-sm placeholder:opacity-60",
-                        disabled: isLoading
+                        onChange: (e)=>setInput(e.target.value)
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 313,
-                        columnNumber: 17
+                        lineNumber: 102,
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].button, {
-                        type: "submit",
                         whileTap: {
                             scale: 0.95
                         },
-                        className: "bg-[#66fff0]/30 hover:bg-[#66fff0]/50 p-3 rounded-lg text-white font-bold transition-colors disabled:opacity-50",
                         disabled: isLoading || !input.trim(),
+                        className: "bg-[#66fff0]/30 hover:bg-[#66fff0]/50 p-3 rounded-lg text-white",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
                             size: 20
                         }, void 0, false, {
                             fileName: "[project]/pages/HelpPage.tsx",
-                            lineNumber: 327,
-                            columnNumber: 21
+                            lineNumber: 113,
+                            columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 321,
-                        columnNumber: 17
+                        lineNumber: 108,
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 312,
-                columnNumber: 13
+                lineNumber: 101,
+                columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/pages/HelpPage.tsx",
-        lineNumber: 280,
-        columnNumber: 9
+        lineNumber: 71,
+        columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(AIChatBot, "NwZZr+GFOe5uiXAB64LXo5yyc90=");
-_c1 = AIChatBot;
+_s(AIChatBot, "syYzRXIlZc0TwmPfuWvHRtOz/+g=");
+_c = AIChatBot;
 const FAQSection = ()=>{
     _s1();
-    const [openIndex, setOpenIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const toggleFAQ = (index)=>{
-        setOpenIndex(openIndex === index ? null : index);
-    };
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StaggeredBox, {
-        className: "p-4 h-full flex flex-col overflow-y-auto scrollbar-thin",
+    const [openIndex, setOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "glass-panel p-4 flex flex-col overflow-y-auto scrollbar-thin",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex items-center gap-3 mb-4 border-b border-cyan-500/30 pb-3 flex-shrink-0",
+                className: "flex items-center gap-3 mb-4 border-b border-cyan-500/30 pb-3",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$question$2d$mark$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__HelpCircle$3e$__["HelpCircle"], {
                         size: 24,
                         className: "text-yellow-400"
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 344,
-                        columnNumber: 17
+                        lineNumber: 125,
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                         className: "text-xl font-mono tracking-wider text-white/90",
-                        children: "FREQUENTLY ASKED QUESTIONS"
+                        children: "FAQ"
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 345,
-                        columnNumber: 17
+                        lineNumber: 126,
+                        columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 343,
-                columnNumber: 13
+                lineNumber: 124,
+                columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "space-y-3 flex-grow min-h-0",
-                children: FAQ_DATA.map((faq, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "border border-cyan-700/50 rounded-lg overflow-hidden transition-all duration-300",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].button, {
-                                onClick: ()=>toggleFAQ(index),
-                                className: "w-full text-left p-3 flex justify-between items-center text-sm font-semibold hover:bg-cyan-900/30 transition-colors",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-white/90",
-                                        children: faq.q
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/HelpPage.tsx",
-                                        lineNumber: 357,
-                                        columnNumber: 29
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].span, {
-                                        initial: false,
-                                        animate: {
-                                            rotate: openIndex === index ? 180 : 0
-                                        },
-                                        transition: {
-                                            duration: 0.2
-                                        },
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
-                                            size: 16,
-                                            className: "text-cyan-400"
-                                        }, void 0, false, {
-                                            fileName: "[project]/pages/HelpPage.tsx",
-                                            lineNumber: 363,
-                                            columnNumber: 33
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/HelpPage.tsx",
-                                        lineNumber: 358,
-                                        columnNumber: 29
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 353,
-                                columnNumber: 25
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                                initial: false,
-                                animate: {
-                                    height: openIndex === index ? "auto" : 0
-                                },
-                                transition: {
-                                    duration: 0.3,
-                                    ease: "easeInOut"
-                                },
-                                style: {
-                                    overflow: 'hidden'
-                                },
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "p-3 pt-0 text-xs opacity-70 bg-cyan-900/20",
-                                    children: faq.a
+            FAQ_DATA.map((faq, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "border border-cyan-700/50 rounded-lg mb-2",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            onClick: ()=>setOpen(openIndex === i ? null : i),
+                            className: "w-full p-3 flex justify-between items-center text-sm",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-white/90",
+                                    children: faq.q
                                 }, void 0, false, {
                                     fileName: "[project]/pages/HelpPage.tsx",
-                                    lineNumber: 373,
-                                    columnNumber: 29
+                                    lineNumber: 131,
+                                    columnNumber: 13
+                                }, ("TURBOPACK compile-time value", void 0)),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
+                                    size: 14,
+                                    className: `transition-transform ${openIndex === i ? "rotate-180" : ""}`
+                                }, void 0, false, {
+                                    fileName: "[project]/pages/HelpPage.tsx",
+                                    lineNumber: 132,
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
-                            }, void 0, false, {
-                                fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 367,
-                                columnNumber: 25
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, index, true, {
-                        fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 352,
-                        columnNumber: 21
-                    }, ("TURBOPACK compile-time value", void 0)))
-            }, void 0, false, {
-                fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 350,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/pages/HelpPage.tsx",
+                            lineNumber: 130,
+                            columnNumber: 11
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        openIndex === i && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "p-3 text-xs opacity-70 bg-cyan-900/20",
+                            children: faq.a
+                        }, void 0, false, {
+                            fileName: "[project]/pages/HelpPage.tsx",
+                            lineNumber: 134,
+                            columnNumber: 31
+                        }, ("TURBOPACK compile-time value", void 0))
+                    ]
+                }, i, true, {
+                    fileName: "[project]/pages/HelpPage.tsx",
+                    lineNumber: 129,
+                    columnNumber: 9
+                }, ("TURBOPACK compile-time value", void 0)))
         ]
     }, void 0, true, {
         fileName: "[project]/pages/HelpPage.tsx",
-        lineNumber: 342,
-        columnNumber: 9
+        lineNumber: 123,
+        columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s1(FAQSection, "7z1SfW1ag/kVV/D8SOtFgmPOJ8o=");
-_c2 = FAQSection;
-const ContactSection = ()=>{
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StaggeredBox, {
-        className: "p-4 flex flex-col space-y-4",
+_s1(FAQSection, "M8IBLV9RXuQc1MAi+2d7yT6DGAE=");
+_c1 = FAQSection;
+const ContactSection = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "glass-panel p-4 flex flex-col space-y-4",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex items-center gap-3 border-b border-cyan-500/30 pb-3",
@@ -1456,307 +1256,150 @@ const ContactSection = ()=>{
                         className: "text-red-400"
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 388,
-                        columnNumber: 17
+                        lineNumber: 144,
+                        columnNumber: 7
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                         className: "text-xl font-mono tracking-wider text-white/90",
                         children: "DIRECT CONTACT"
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 389,
-                        columnNumber: 17
+                        lineNumber: 145,
+                        columnNumber: 7
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 387,
-                columnNumber: 13
+                lineNumber: 143,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "text-sm opacity-70",
+                children: "For inquiries or partnership opportunities, contact:"
+            }, void 0, false, {
+                fileName: "[project]/pages/HelpPage.tsx",
+                lineNumber: 147,
+                columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "space-y-3",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-sm opacity-70",
-                        children: "For detailed account inquiries, bug reports, or partnership opportunities, contact the World47 Administration Core directly."
-                    }, void 0, false, {
-                        fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 395,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center bg-red-900/30 p-3 rounded-lg",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__["Mail"], {
-                                size: 16,
-                                className: "text-red-400 mr-3 flex-shrink-0"
-                            }, void 0, false, {
-                                fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 399,
-                                columnNumber: 21
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "mailto:info@world47.com",
-                                className: "text-sm font-mono text-red-300 hover:text-red-200 transition-colors truncate",
-                                onClick: (e)=>{
-                                    e.preventDefault(); /* Prevent actual navigation in sandbox */ 
-                                },
-                                children: "info@world47.com"
-                            }, void 0, false, {
-                                fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 400,
-                                columnNumber: 21
-                            }, ("TURBOPACK compile-time value", void 0))
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 398,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
+                className: "bg-red-900/30 p-3 rounded-lg",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                    href: "mailto:info@world47.com",
+                    className: "text-sm text-red-300 hover:underline",
+                    children: "info@world47.com"
+                }, void 0, false, {
+                    fileName: "[project]/pages/HelpPage.tsx",
+                    lineNumber: 149,
+                    columnNumber: 7
+                }, ("TURBOPACK compile-time value", void 0))
+            }, void 0, false, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 394,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex items-center gap-3 border-t border-cyan-500/30 pt-4",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {
-                        size: 24,
-                        className: "text-green-400"
-                    }, void 0, false, {
-                        fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 408,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                        className: "text-xl font-mono tracking-wider text-white/90",
-                        children: "COMMUNITY SUPPORT"
-                    }, void 0, false, {
-                        fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 409,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
-                fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 407,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "space-y-3",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-sm opacity-70",
-                        children: "Engage with the World47 community, find solutions, and share your experiences in the official communication threads."
-                    }, void 0, false, {
-                        fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 415,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].button, {
-                        whileTap: {
-                            scale: 0.98
-                        },
-                        className: "w-full py-3 font-bold tracking-wider rounded-lg transition-colors duration-200 bg-green-700/50 hover:bg-green-600/70 flex items-center justify-center gap-2",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Link$3e$__["Link"], {
-                                size: 18
-                            }, void 0, false, {
-                                fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 422,
-                                columnNumber: 21
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            " ACCESS COMMUNITY THREADS (Simulated Link)"
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 418,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
-                fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 414,
-                columnNumber: 13
+                lineNumber: 148,
+                columnNumber: 5
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/pages/HelpPage.tsx",
-        lineNumber: 386,
-        columnNumber: 9
+        lineNumber: 142,
+        columnNumber: 3
     }, ("TURBOPACK compile-time value", void 0));
-};
-_c3 = ContactSection;
-/* ------------------------------
-    MAIN APPLICATION
-    ------------------------------ */ const App = ()=>{
-    // We define the page title here to pass it to the Header component
-    const pageTitle = "SUPPORT NEXUS V4.7";
-    const simpleFade = {
-        initial: {
-            opacity: 0
-        },
-        animate: {
-            opacity: 1,
-            transition: {
-                duration: 0.8,
-                ease: "easeOut"
-            }
-        }
-    };
+_c2 = ContactSection;
+function App() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "relative w-screen h-screen flex items-center justify-center overflow-hidden bg-[#00050a] text-cyan-200",
+        className: "relative w-screen h-screen flex items-center justify-center bg-[#00050a] text-cyan-200",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 bg-[radial-gradient(circle_at_center,_#0a599e_0%,_#0a1631_40%,_#211c39_100%)]"
             }, void 0, false, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 445,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute inset-0 bg-repeat opacity-10 pointer-events-none",
-                style: {
-                    backgroundImage: 'radial-gradient(cyan 1px, transparent 1px), radial-gradient(cyan 1px, transparent 1px)',
-                    backgroundSize: '40px 40px',
-                    backgroundPosition: '0 0, 20px 20px'
-                }
-            }, void 0, false, {
-                fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 448,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0)),
+                lineNumber: 159,
+                columnNumber: 7
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].header, {
-                className: "absolute top-6 left-6 right-6 z-50 pointer-events-auto",
-                ...simpleFade,
-                transition: {
-                    ...simpleFade.animate.transition,
-                    delay: 0.1
-                },
+                className: "absolute top-6 left-6 right-6 z-50",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                    pageTitle: pageTitle
+                    pageTitle: "SUPPORT NEXUS V4.7"
                 }, void 0, false, {
                     fileName: "[project]/pages/HelpPage.tsx",
-                    lineNumber: 456,
-                    columnNumber: 17
-                }, ("TURBOPACK compile-time value", void 0))
+                    lineNumber: 161,
+                    columnNumber: 9
+                }, this)
             }, void 0, false, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 451,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0)),
+                lineNumber: 160,
+                columnNumber: 7
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$dom$2f$motion$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["motion"].div, {
                 className: "relative z-40 w-full max-w-7xl h-[85vh] p-8 mt-28 grid grid-cols-1 md:grid-cols-3 gap-8",
-                initial: "hidden",
-                animate: "visible",
-                variants: {
-                    hidden: {
-                        opacity: 0
-                    },
-                    visible: {
-                        opacity: 1,
-                        transition: {
-                            staggerChildren: 0.1,
-                            delayChildren: 0.2
-                        }
-                    }
-                },
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "col-span-1 md:col-span-2",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(AIChatBot, {}, void 0, false, {
                             fileName: "[project]/pages/HelpPage.tsx",
-                            lineNumber: 471,
-                            columnNumber: 21
-                        }, ("TURBOPACK compile-time value", void 0))
+                            lineNumber: 166,
+                            columnNumber: 11
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 470,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0)),
+                        lineNumber: 165,
+                        columnNumber: 9
+                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "col-span-1 flex flex-col gap-8",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "h-1/2 min-h-[300px]",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FAQSection, {}, void 0, false, {
-                                    fileName: "[project]/pages/HelpPage.tsx",
-                                    lineNumber: 477,
-                                    columnNumber: 25
-                                }, ("TURBOPACK compile-time value", void 0))
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FAQSection, {}, void 0, false, {
                                 fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 476,
-                                columnNumber: 21
-                            }, ("TURBOPACK compile-time value", void 0)),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "h-1/2",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ContactSection, {}, void 0, false, {
-                                    fileName: "[project]/pages/HelpPage.tsx",
-                                    lineNumber: 480,
-                                    columnNumber: 25
-                                }, ("TURBOPACK compile-time value", void 0))
-                            }, void 0, false, {
+                                lineNumber: 169,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ContactSection, {}, void 0, false, {
                                 fileName: "[project]/pages/HelpPage.tsx",
-                                lineNumber: 479,
-                                columnNumber: 21
-                            }, ("TURBOPACK compile-time value", void 0))
+                                lineNumber: 170,
+                                columnNumber: 11
+                            }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/HelpPage.tsx",
-                        lineNumber: 475,
-                        columnNumber: 17
-                    }, ("TURBOPACK compile-time value", void 0))
+                        lineNumber: 168,
+                        columnNumber: 9
+                    }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 460,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0)),
+                lineNumber: 164,
+                columnNumber: 7
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
                 children: `
-                .glass-panel {
-                    background: rgba(0, 20, 27, 0.4);
-                    backdrop-filter: blur(20px);
-                    -webkit-backdrop-filter: blur(20px);
-                    border: 2px solid rgba(0, 255, 255, 0.8);
-                    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2), 0 6px 15px rgba(0, 0, 0, 0.6);
-                    border-radius: 12px;
-                    height: 100%;
-                }
-                .scrollbar-thin::-webkit-scrollbar {
-                    width: 6px;
-                }
-                .scrollbar-thin::-webkit-scrollbar-thumb {
-                    background-color: rgba(0, 255, 255, 0.6);
-                    border-radius: 3px;
-                }
-                .scrollbar-thin::-webkit-scrollbar-track {
-                    background: rgba(0, 0, 0, 0.2);
-                }
-            `
+        .glass-panel {
+          background: rgba(0, 20, 27, 0.4);
+          backdrop-filter: blur(20px);
+          border: 2px solid rgba(0, 255, 255, 0.8);
+          box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+          border-radius: 12px;
+          height: 100%;
+        }
+        .scrollbar-thin::-webkit-scrollbar { width: 6px; }
+        .scrollbar-thin::-webkit-scrollbar-thumb { background-color: rgba(0,255,255,0.6); border-radius: 3px; }
+      `
             }, void 0, false, {
                 fileName: "[project]/pages/HelpPage.tsx",
-                lineNumber: 486,
-                columnNumber: 13
-            }, ("TURBOPACK compile-time value", void 0))
+                lineNumber: 174,
+                columnNumber: 7
+            }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/pages/HelpPage.tsx",
-        lineNumber: 443,
-        columnNumber: 9
-    }, ("TURBOPACK compile-time value", void 0));
-};
-_c4 = App;
-const __TURBOPACK__default__export__ = App;
-var _c, _c1, _c2, _c3, _c4;
-__turbopack_context__.k.register(_c, "StaggeredBox");
-__turbopack_context__.k.register(_c1, "AIChatBot");
-__turbopack_context__.k.register(_c2, "FAQSection");
-__turbopack_context__.k.register(_c3, "ContactSection");
-__turbopack_context__.k.register(_c4, "App");
+        lineNumber: 158,
+        columnNumber: 5
+    }, this);
+}
+_c3 = App;
+var _c, _c1, _c2, _c3;
+__turbopack_context__.k.register(_c, "AIChatBot");
+__turbopack_context__.k.register(_c1, "FAQSection");
+__turbopack_context__.k.register(_c2, "ContactSection");
+__turbopack_context__.k.register(_c3, "App");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

@@ -1,6 +1,9 @@
 self.__BUILD_MANIFEST = {
-  "/HelpPage": [
-    "static/chunks/pages/HelpPage.js"
+  "/": [
+    "static/chunks/pages/index.js"
+  ],
+  "/_error": [
+    "static/chunks/pages/_error.js"
   ],
   "__rewrites": {
     "afterFiles": [],
